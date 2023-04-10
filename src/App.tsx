@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './sections/About';
 import Home from './sections/Home';
+import Skills from './sections/Skills';
 import { darkTheme, lightTheme } from './theme';
 
 const GlobalStyles = createGlobalStyle`
@@ -31,6 +32,7 @@ function App() {
 			<main>
 				<Home />
 				<About />
+				<Skills />
 			</main>
 			<Footer isDark={isDark} themeToggle={themeToggle} />
 		</ThemeProvider>

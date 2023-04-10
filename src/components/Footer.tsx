@@ -27,6 +27,7 @@ const FooterWrap = styled.footer<IFooterWrapProps>`
 			props.scrollY === 0 || props.scrollDirection === 'down' ? 0 : '100%'}
 	);
 	transition: transform 0.3s;
+	z-index: 100;
 `;
 
 const FooterLinkList = styled.ul`

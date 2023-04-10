@@ -19,6 +19,7 @@ const HeaderWrap = styled.header<IHeaderWrapProps>`
 	justify-content: space-between;
 	align-items: center;
 
+	background: ${(props) => props.theme.bgColor};
 	border-bottom: 1px solid ${(props) => props.theme.textColor};
 	color: ${(props) => props.theme.textColor};
 
@@ -27,6 +28,7 @@ const HeaderWrap = styled.header<IHeaderWrapProps>`
 			props.scrollY === 0 || props.scrollDirection === 'down' ? 0 : '-100%'}
 	);
 	transition: transform 0.3s;
+	z-index: 100;
 `;
 
 const HeaderLinkList = styled.ul`

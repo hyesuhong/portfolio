@@ -27,6 +27,8 @@ const LeftSide = styled.article`
 	border-right: 1px solid ${(props) => props.theme.textColor};
 `;
 
+const RightSide = styled.article``;
+
 interface ISectionProps {
 	title: ReactNode;
 	leftChild?: ReactNode;
@@ -42,6 +44,7 @@ export default function Section({
 		<HasChildWrapper>
 			<SectionTitle>{title}</SectionTitle>
 			{leftChild && <LeftSide>{leftChild}</LeftSide>}
+			{rightChild && <RightSide>{rightChild}</RightSide>}
 		</HasChildWrapper>
 	) : (
 		<Wrapper>

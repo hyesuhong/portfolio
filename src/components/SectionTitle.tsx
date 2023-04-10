@@ -8,6 +8,7 @@ const Title = styled.h2`
 	height: 60px;
 	font-size: 24px;
 	font-weight: 300;
+	background: ${(props) => props.theme.bgColor};
 	border-top: 1px solid ${(props) => props.theme.textColor};
 	border-bottom: 1px solid ${(props) => props.theme.textColor};
 	padding: 0 20px;
