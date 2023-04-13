@@ -50,18 +50,20 @@ const SectionTitle = styled(Title)`
 `;
 
 interface ISectionProps {
+	id: string;
 	title: ReactNode;
 	leftChild?: ReactNode;
 	rightChild?: ReactNode;
 }
 
 export default function Section({
+	id,
 	title,
 	leftChild,
 	rightChild,
 }: ISectionProps) {
 	return leftChild || rightChild ? (
-		<HasChildWrapper>
+		<HasChildWrapper id={id}>
 			<LeftSide>
 				<Title>{title}</Title>
 				{leftChild && <>{leftChild}</>}
@@ -69,7 +71,7 @@ export default function Section({
 			<RightSide>{rightChild}</RightSide>
 		</HasChildWrapper>
 	) : (
-		<Wrapper>
+		<Wrapper id={id}>
 			<SectionTitle>{title}</SectionTitle>
 		</Wrapper>
 	);

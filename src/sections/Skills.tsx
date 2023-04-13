@@ -56,6 +56,7 @@ export default function Skills() {
 
 	return (
 		<Section
+			id='skills'
 			title={
 				<>
 					My&nbsp;<strong>skills</strong>&nbsp;are

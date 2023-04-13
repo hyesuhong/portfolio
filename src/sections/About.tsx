@@ -38,6 +38,7 @@ const HistoryWrap = styled.dl`
 function About() {
 	return (
 		<Section
+			id='about'
 			title={
 				<>
 					Who am&nbsp;<strong>I</strong>

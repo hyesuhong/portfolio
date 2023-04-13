@@ -73,11 +73,25 @@ const HeaderLinkItem = styled.li<{ text: string }>`
 function Header() {
 	const { scrollY, scrollDirection } = useScroll();
 
+	const onClick = (ev: React.MouseEvent<HTMLUListElement>) => {
+		const { target, currentTarget } = ev;
+		const targetEl = target as Element;
+
+		if (target === currentTarget) return;
+
+		const targetID = targetEl.textContent!.toLowerCase();
+		const to = document.querySelector(`#${targetID}`);
+		if (!to) return;
+		to.scrollIntoView({
+			behavior: 'smooth',
+		});
+	};
+
 	return (
 		<HeaderWrap scrollY={scrollY} scrollDirection={scrollDirection}>
 			<MaskItem type='link' maskUrl={Logo} />
 			<nav>
-				<HeaderLinkList>
+				<HeaderLinkList onClick={onClick}>
 					<HeaderLinkItem text='About'>About</HeaderLinkItem>
 					<HeaderLinkItem text='Skills'>Skills</HeaderLinkItem>
 					<HeaderLinkItem text='Projects'>Projects</HeaderLinkItem>

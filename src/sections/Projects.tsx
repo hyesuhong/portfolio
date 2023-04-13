@@ -102,6 +102,7 @@ function Projects() {
 
 	return (
 		<Section
+			id='projects'
 			title={
 				<>
 					<strong>Projects</strong>&nbsp;what I did
