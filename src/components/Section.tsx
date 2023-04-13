@@ -1,33 +1,53 @@
 import { ReactNode } from 'react';
 import styled from 'styled-components';
-import SectionTitle from './SectionTitle';
 
 const Wrapper = styled.section`
 	min-height: 100vh;
 `;
 
 const HasChildWrapper = styled(Wrapper)`
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: min-content minmax(0, 1fr);
-
-	& > h2 {
-		grid-column: span 2;
-	}
+	display: flex;
+	border-top: 1px solid ${(props) => props.theme.textColor};
 `;
 
 const LeftSide = styled.article`
+	flex: 1;
+	height: 100vh;
+
+	position: sticky;
+	top: 0;
+
 	display: flex;
 	align-items: flex-end;
-	justify-content: flex-end;
+	justify-content: space-between;
 
-	padding-bottom: 100px;
-	padding-right: 10px;
+	padding: 100px 10px;
 
 	border-right: 1px solid ${(props) => props.theme.textColor};
 `;
 
-const RightSide = styled.article``;
+const RightSide = styled.article`
+	flex: 1;
+	min-height: 100vh;
+`;
+
+const Title = styled.h2`
+	font-size: 64px;
+	font-weight: 100;
+	padding-left: 10px;
+	align-self: flex-start;
+`;
+
+const SectionTitle = styled(Title)`
+	padding-left: 0;
+	align-self: initial;
+
+	display: flex;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+`;
 
 interface ISectionProps {
 	title: ReactNode;
@@ -42,9 +62,11 @@ export default function Section({
 }: ISectionProps) {
 	return leftChild || rightChild ? (
 		<HasChildWrapper>
-			<SectionTitle>{title}</SectionTitle>
-			{leftChild && <LeftSide>{leftChild}</LeftSide>}
-			{rightChild && <RightSide>{rightChild}</RightSide>}
+			<LeftSide>
+				<Title>{title}</Title>
+				{leftChild && <>{leftChild}</>}
+			</LeftSide>
+			<RightSide>{rightChild}</RightSide>
 		</HasChildWrapper>
 	) : (
 		<Wrapper>

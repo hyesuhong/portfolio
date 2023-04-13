@@ -1,7 +1,3 @@
-interface dataObj<T> {
-	[key: string]: T[];
-}
-
 export interface projectVal<T> {
 	start: string;
 	end?: string;
@@ -14,10 +10,16 @@ export interface projectVal<T> {
 	images?: T[];
 }
 
-interface projectURL {
+export interface projectURL {
 	title: string;
 	url: string;
 }
+
+export const projectKind = {
+	all: 'all',
+	work: 'work',
+	personal: 'personal',
+};
 
 export const projectData: projectVal<string | projectURL>[] = [
 	{

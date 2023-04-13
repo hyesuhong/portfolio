@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import About from './sections/About';
 import Home from './sections/Home';
+import Projects from './sections/Projects';
 import Skills from './sections/Skills';
 import { darkTheme, lightTheme } from './theme';
 
@@ -33,6 +34,7 @@ function App() {
 				<Home />
 				<About />
 				<Skills />
+				<Projects />
 			</main>
 			<Footer isDark={isDark} themeToggle={themeToggle} />
 		</ThemeProvider>

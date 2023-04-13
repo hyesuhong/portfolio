@@ -1,27 +1,16 @@
-import styled from 'styled-components';
-
-const Section = styled.section`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-
-	h1 {
-		font-size: 64px;
-		font-weight: 100;
-		text-align: center;
-	}
-`;
+import Section from '../components/Section';
 
 function Home() {
 	return (
-		<Section>
-			<h1>
-				Frontend Developer
-				<br />
-				Hyesu Hong
-			</h1>
-		</Section>
+		<Section
+			title={
+				<>
+					Frontend Developer
+					<br />
+					Hyesu Hong
+				</>
+			}
+		/>
 	);
 }
 
