@@ -59,7 +59,7 @@ export default function Skills() {
 			id='skills'
 			title={
 				<>
-					My&nbsp;<strong>skills</strong>&nbsp;are
+					My <strong>skills</strong> are
 				</>
 			}
 			rightChild={skillData[skill].map((data, key) => listFormat(data, key))}

@@ -1,13 +1,13 @@
-export interface projectVal<T> {
+export interface projectVal {
 	start: string;
 	end?: string;
 	name: string;
 	kind: 'work' | 'personal';
 	overview: string;
-	description: T[];
-	focus: T[];
-	relatedURL?: T[];
-	images?: T[];
+	description: string[];
+	focus: string[];
+	relatedURL?: projectURL[];
+	images?: string[];
 }
 
 export interface projectURL {
@@ -21,7 +21,7 @@ export const projectKind = {
 	personal: 'personal',
 };
 
-export const projectData: projectVal<string | projectURL>[] = [
+export const projectData: projectVal[] = [
 	{
 		start: '2021.12',
 		end: '2022.04',
@@ -31,7 +31,7 @@ export const projectData: projectVal<string | projectURL>[] = [
 		description: [
 			'리앤영피부과 홈페이지를 관리하는 프로그램을 개발하는 프로젝트입니다. 프로그램 상에서 게시물, 시술정보, 예약정보 등 전반적인 데이터 관리가 가능해야 했습니다.',
 			'메인 프론트엔드 개발자로 참여해, 기본 프로젝트 구조 설계 및 UI 컴포넌트를 개발했으며, 데이터 관리를 위한 CRUD 적용 및 이미지/동영상 업로드 기능을 적용했습니다.',
-			'프로젝트가 완료된 후 지점이 2개에서 4개로 증가했습니다. 또한, 관리 자동화로 사내 개발자 업무량이 감소했습니다.',
+			'프로젝트가 완료된 후 지점이 증가했으며, 관리 자동화로 사내 개발자 업무량이 감소했습니다.',
 		],
 		focus: [
 			'Javascript 와 PHP 를 주로 사용했습니다.',

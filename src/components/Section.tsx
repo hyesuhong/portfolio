@@ -13,6 +13,7 @@ const HasChildWrapper = styled(Wrapper)`
 const LeftSide = styled.article`
 	flex: 1;
 	height: 100vh;
+	min-width: 0;
 
 	position: sticky;
 	top: 0;
@@ -21,7 +22,7 @@ const LeftSide = styled.article`
 	align-items: flex-end;
 	justify-content: space-between;
 
-	padding: 100px 10px;
+	padding: 100px 0;
 
 	border-right: 1px solid ${(props) => props.theme.textColor};
 `;
@@ -34,7 +35,7 @@ const RightSide = styled.article`
 const Title = styled.h2`
 	font-size: 64px;
 	font-weight: 100;
-	padding-left: 10px;
+	padding-left: 20px;
 	align-self: flex-start;
 `;
 

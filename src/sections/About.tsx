@@ -41,10 +41,9 @@ function About() {
 			id='about'
 			title={
 				<>
-					Who am&nbsp;<strong>I</strong>
+					Who am <strong>I</strong>
 				</>
 			}
-			leftChild={<img src={Logo} alt='profile' />}
 			rightChild={<AboutDetail />}
 		/>
 	);
