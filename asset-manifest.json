@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.19795a73.css",
-    "main.js": "/portfolio/static/js/main.8c5d9554.js",
-    "static/media/ico-github.svg": "/portfolio/static/media/ico-github.3e893d7d513584c8989075ca763eaa7d.svg",
-    "static/media/ico-theme-dark.svg": "/portfolio/static/media/ico-theme-dark.1ef77f26de4c967955ab8b0ee78f9818.svg",
-    "static/media/logo.svg": "/portfolio/static/media/logo.fd97e3e16c20d3017a61089dff81b3de.svg",
+    "main.css": "/portfolio/static/css/main.f845280f.css",
+    "main.js": "/portfolio/static/js/main.77d81ea5.js",
+    "static/media/ico-github.svg": "/portfolio/static/media/ico-github.3e893d7d513584c89890.svg",
+    "static/media/ico-theme-dark.svg": "/portfolio/static/media/ico-theme-dark.1ef77f26de4c967955ab.svg",
+    "static/media/logo.svg": "/portfolio/static/media/logo.fd97e3e16c20d3017a61.svg",
     "index.html": "/portfolio/index.html",
-    "static/media/ico-theme-light.svg": "/portfolio/static/media/ico-theme-light.86996ee24ccb6471a32f715d79195bf5.svg",
-    "static/media/ico-link.svg": "/portfolio/static/media/ico-link.835b456fd285159c0c47faf8da2b8d4c.svg",
-    "static/media/ico-mail.svg": "/portfolio/static/media/ico-mail.dabcdf1b8229c08bacd07e012e1c3a51.svg",
-    "main.19795a73.css.map": "/portfolio/static/css/main.19795a73.css.map",
-    "main.8c5d9554.js.map": "/portfolio/static/js/main.8c5d9554.js.map"
+    "static/media/ico-theme-light.svg": "/portfolio/static/media/ico-theme-light.86996ee24ccb6471a32f.svg",
+    "static/media/ico-link.svg": "/portfolio/static/media/ico-link.835b456fd285159c0c47.svg",
+    "static/media/ico-mail.svg": "/portfolio/static/media/ico-mail.dabcdf1b8229c08bacd0.svg",
+    "main.f845280f.css.map": "/portfolio/static/css/main.f845280f.css.map",
+    "main.77d81ea5.js.map": "/portfolio/static/js/main.77d81ea5.js.map"
   },
   "entrypoints": [
-    "static/css/main.19795a73.css",
-    "static/js/main.8c5d9554.js"
+    "static/css/main.f845280f.css",
+    "static/js/main.77d81ea5.js"
   ]
 }
