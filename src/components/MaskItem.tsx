@@ -8,7 +8,7 @@ const Wrapper = styled.div<{ url: string }>`
 	& > * {
 		width: 100%;
 		height: 100%;
-		background: ${(props) => props.theme.textColor};
+		/* background: ${(props) => props.theme.textColor}; */
 
 		mask: url('${(props) => props.url}') no-repeat center center;
 		-webkit-mask: url('${(props) => props.url}') no-repeat center center;
@@ -37,8 +37,8 @@ interface IMaskItemProps {
 
 function MaskItem({ type, maskUrl, link, onClick }: IMaskItemProps) {
 	// id 필요할 경우 사용
-	const randomNum = getRandomNumbers(256);
-	const randomID = 'input' + randomNum;
+	// const randomNum = getRandomNumbers(256);
+	// const randomID = 'input' + randomNum;
 
 	return (
 		<Wrapper url={maskUrl}>

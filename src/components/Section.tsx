@@ -1,54 +1,4 @@
 import { ReactNode } from 'react';
-import styled from 'styled-components';
-
-const Wrapper = styled.section`
-	min-height: 100vh;
-`;
-
-const HasChildWrapper = styled(Wrapper)`
-	display: flex;
-	border-top: 1px solid ${(props) => props.theme.textColor};
-`;
-
-const LeftSide = styled.article`
-	flex: 1;
-	height: 100vh;
-	min-width: 0;
-
-	position: sticky;
-	top: 0;
-
-	display: flex;
-	align-items: flex-end;
-	justify-content: space-between;
-
-	padding: 100px 0;
-
-	border-right: 1px solid ${(props) => props.theme.textColor};
-`;
-
-const RightSide = styled.article`
-	flex: 1;
-	min-height: 100vh;
-`;
-
-const Title = styled.h2`
-	font-size: 64px;
-	font-weight: 100;
-	padding-left: 20px;
-	align-self: flex-start;
-`;
-
-const SectionTitle = styled(Title)`
-	padding-left: 0;
-	align-self: initial;
-
-	display: flex;
-	height: 100vh;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-`;
 
 interface ISectionProps {
 	id: string;
@@ -64,16 +14,16 @@ export default function Section({
 	rightChild,
 }: ISectionProps) {
 	return leftChild || rightChild ? (
-		<HasChildWrapper id={id}>
-			<LeftSide>
-				<Title>{title}</Title>
-				{leftChild && <>{leftChild}</>}
-			</LeftSide>
-			<RightSide>{rightChild}</RightSide>
-		</HasChildWrapper>
+		<section id={id} className='section'>
+			<article className='article article-left'>
+				<h2 className='section__title section__title-inside'>{title}</h2>
+				{leftChild}
+			</article>
+			<article className='article article-right'>{rightChild}</article>
+		</section>
 	) : (
-		<Wrapper id={id}>
-			<SectionTitle>{title}</SectionTitle>
-		</Wrapper>
+		<section id={id} className='section section-noChild'>
+			<h2 className='section__title'>{title}</h2>
+		</section>
 	);
 }

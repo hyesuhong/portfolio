@@ -1,34 +1,51 @@
 @import './reset.css';
+@import './header.css';
+@import './footer.css';
+@import './section.css';
+@import './about.css';
+@import './skill.css';
+@import './project.css';
 
-.footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	padding: 5px 20px;
+:root {
+	--bgColor: #d4caff;
+	--textColor: #1e1e1e;
+	--accentColor: #9747ff;
 
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	font-size: 10px;
 }
 
-.footer__btn {
-	width: 30px;
-	height: 30px;
-	background: transparent;
-	border: none;
-	outline: none;
+/* @media (max-width: 1200px) {
+	:root {
+		font-size: 9px;
+	}
 }
 
-.footer__btn > img {
-	width: 100%;
-	height: 100%;
+@media (max-width: 992px) {
+	:root {
+		font-size: 8px;
+	}
 }
 
-.footer__link-list {
-	display: flex;
+@media (max-width: 768px) {
+	:root {
+		font-size: 7px;
+	}
+} */
+
+:root.light {
+	--bgColor: #d4caff;
+	--textColor: #1e1e1e;
+	--accentColor: #9747ff;
 }
 
-.footer__link-item:not(:first-child) {
-	margin-left: 10px;
+:root.dark {
+	--bgColor: #1e1e1e;
+	--textColor: #d4caff;
+	--accentColor: #9747ff;
+}
+
+body {
+	background: var(--bgColor);
+	color: var(--textColor);
+	transition: background 0.3s, color 0.3s;
 }

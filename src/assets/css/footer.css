@@ -1,0 +1,57 @@
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0.5rem 2rem;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	transition: all 0.3s;
+	z-index: 100;
+}
+
+.footer.slideDown {
+	transform: translateY(100%);
+}
+
+.footer__btn {
+	display: block;
+	width: 3rem;
+	height: 3rem;
+
+	background: var(--textColor);
+	border: none;
+	outline: none;
+
+	mask: var(--url) no-repeat center center;
+	-webkit-mask: var(--url) no-repeat center center;
+	mask-size: cover;
+	-webkit-mask-size: cover;
+}
+
+.footer__btn-theme-light {
+	--url: url('../images/ico-theme-light.svg');
+}
+
+.footer__btn-theme-dark {
+	--url: url('../images/ico-theme-dark.svg');
+}
+
+.footer__btn-github {
+	--url: url('../images/ico-github.svg');
+}
+
+.footer__btn-mail {
+	--url: url('../images/ico-mail.svg');
+}
+
+.footer__url-list {
+	display: flex;
+}
+
+.footer__url-item:not(:first-child) {
+	margin-left: 1rem;
+}

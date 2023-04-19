@@ -9,7 +9,6 @@ function Projects() {
 	const [pKind, setPKind] = useState(projectKinds[0]);
 
 	const data = useMemo(() => {
-		console.log(pKind);
 		return pKind === 'all'
 			? projectData
 			: projectData.filter((d) => d.kind === pKind);

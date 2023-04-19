@@ -1,67 +1,3 @@
-import styled from 'styled-components';
-
-const List = styled.ul`
-	text-align: right;
-	padding-right: 10px;
-
-	& > li {
-		text-transform: uppercase;
-		font-size: 20px;
-		margin-bottom: 20px;
-	}
-
-	& > li:last-child {
-		margin-bottom: 0;
-	}
-`;
-
-const SelectInput = styled.input`
-	display: none;
-
-	& + label {
-		display: inline-block;
-		position: relative;
-		color: transparent;
-		cursor: pointer;
-		overflow: hidden;
-	}
-
-	& + label::before,
-	& + label::after {
-		content: '${(props) => props.value}';
-		position: absolute;
-		left: 0;
-		color: ${(props) => props.theme.textColor};
-		opacity: 0.2;
-		transition: all 0.3s;
-	}
-
-	&:not(:checked) + label {
-		&::before {
-			top: 0;
-		}
-
-		&::after {
-			top: 100%;
-		}
-
-		&:hover::before,
-		&:hover::after {
-			transform: translateY(-100%);
-		}
-	}
-
-	&:checked + label {
-		cursor: default;
-
-		&::before,
-		&::after {
-			color: ${(props) => props.theme.accentColor};
-			opacity: 1;
-		}
-	}
-`;
-
 type dataObj = {
 	[key: string]: string;
 };
@@ -85,23 +21,26 @@ export default function Selectlist({
 	};
 
 	return (
-		<List>
+		<ul className='selectlist'>
 			{kindArr.map((kind, index) => {
 				const isChecked = kind === currentKind;
 				return (
-					<li key={index}>
-						<SelectInput
+					<li className='selectlist__item' key={index}>
+						<input
 							type='radio'
+							className='selectlist__input'
 							name={kindName}
 							value={kind}
 							id={kindName + '-' + kind}
 							defaultChecked={isChecked}
 							onChange={onChange}
 						/>
-						<label htmlFor={kindName + '-' + kind}>{kind}</label>
+						<label htmlFor={kindName + '-' + kind} data-text={kind}>
+							{kind}
+						</label>
 					</li>
 				);
 			})}
-		</List>
+		</ul>
 	);
 }

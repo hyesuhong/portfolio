@@ -1,31 +1,6 @@
 import { memo, useEffect, useMemo, useState } from 'react';
-import styled from 'styled-components';
 import { projectVal } from '../data/projects';
 import ProjectList from './ProjectList';
-
-const Table = styled.div`
-	font-size: 16px;
-	.thead {
-		position: sticky;
-		top: 0;
-
-		display: flex;
-		align-items: center;
-		height: 40px;
-
-		background: ${(props) => props.theme.bgColor};
-		border-bottom: 1px solid ${(props) => props.theme.textColor};
-	}
-
-	.th {
-		flex: 2;
-		padding-left: 10px;
-	}
-
-	.th:last-child {
-		flex: 1;
-	}
-`;
 
 interface IProjectTableProps {
 	data: projectVal[];
@@ -68,16 +43,11 @@ const ProjectTable = memo(({ data }: IProjectTableProps) => {
 	});
 
 	return (
-		<Table>
-			<div className='thead'>
-				<div className='th'>Project</div>
-				<div className='th'>Description</div>
-				<div className='th'>Duration</div>
-			</div>
+		<div className='projects'>
 			{dataWithState.map((d, i) => (
 				<ProjectList key={i} data={d} onClick={onClick} />
 			))}
-		</Table>
+		</div>
 	);
 });
 
