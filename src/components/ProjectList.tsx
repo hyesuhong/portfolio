@@ -1,16 +1,13 @@
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { projectVal } from '../data/projects';
 
-interface ProjectData extends projectVal {
+interface IProjectListProps {
+	data: projectVal;
+	onClick?: any;
 	current: boolean;
 }
 
-interface IProjectListProps {
-	data: ProjectData;
-	onClick?: any;
-}
-
-const ProjectList = memo(({ data, onClick }: IProjectListProps) => {
+const ProjectList = memo(({ data, onClick, current }: IProjectListProps) => {
 	const {
 		kind,
 		name,
@@ -21,7 +18,6 @@ const ProjectList = memo(({ data, onClick }: IProjectListProps) => {
 		description,
 		focus,
 		relatedURL,
-		current,
 	} = data;
 
 	return (
@@ -38,7 +34,25 @@ const ProjectList = memo(({ data, onClick }: IProjectListProps) => {
 			<div className='project__duration'>
 				{start} ~{end && ' ' + end}
 			</div>
-			{images && <div className='project__images'></div>}
+			{images && (
+				<div className='project__images'>
+					<div className='project__images-wrapper'>
+						<div
+							className='project__images-slide'
+							style={{ width: `${100 * images.length}%` }}
+						>
+							{images.map((img, index) => (
+								<div className='project__images-img' key={index}>
+									<img
+										src={require(`../assets/images/projects/${img.url}`)}
+										alt={img.title}
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+			)}
 			<div className='project__details'>
 				{description.map((desc, index) =>
 					desc !== '' ? <p key={index}>{desc.toString()}</p> : null

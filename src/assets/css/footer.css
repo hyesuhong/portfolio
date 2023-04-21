@@ -33,19 +33,19 @@
 }
 
 .footer__btn-theme-light {
-	--url: url('../images/ico-theme-light.svg');
+	--url: url('../images/icons/ico-theme-light.svg');
 }
 
 .footer__btn-theme-dark {
-	--url: url('../images/ico-theme-dark.svg');
+	--url: url('../images/icons/ico-theme-dark.svg');
 }
 
 .footer__btn-github {
-	--url: url('../images/ico-github.svg');
+	--url: url('../images/icons/ico-github.svg');
 }
 
 .footer__btn-mail {
-	--url: url('../images/ico-mail.svg');
+	--url: url('../images/icons/ico-mail.svg');
 }
 
 .footer__url-list {

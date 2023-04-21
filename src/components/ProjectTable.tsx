@@ -44,9 +44,17 @@ const ProjectTable = memo(({ data }: IProjectTableProps) => {
 
 	return (
 		<div className='projects'>
-			{dataWithState.map((d, i) => (
-				<ProjectList key={i} data={d} onClick={onClick} />
-			))}
+			{dataWithState.map((d, i) => {
+				const { current, ...originData } = d;
+				return (
+					<ProjectList
+						key={i}
+						data={originData}
+						current={current}
+						onClick={onClick}
+					/>
+				);
+			})}
 		</div>
 	);
 });

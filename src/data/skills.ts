@@ -33,7 +33,7 @@ export const skillData: dataObj<dataValArr> = {
 				'Styled-components, Recoil 등의 라이브러리를 활용할 수 있음',
 			],
 		},
-		{
+		/* {
 			name: 'Node.js',
 			details: [
 				'Http / Https 의 차이 및 Status Code, Method 등을 이해',
@@ -41,7 +41,7 @@ export const skillData: dataObj<dataValArr> = {
 				'기본 제공되는 모듈을 적절하게 사용',
 				'미들웨어가 무엇인지 이해하고 있으며, 적절하게 사용 가능',
 			],
-		},
+		}, */
 		{
 			name: 'HTML',
 			details: [
@@ -56,10 +56,10 @@ export const skillData: dataObj<dataValArr> = {
 				'Flex, Grid 시스템을 이해하고 있음',
 			],
 		},
-		{
+		/* {
 			name: 'Git & Github',
 			details: [],
-		},
+		}, */
 	],
 	etc: [
 		{

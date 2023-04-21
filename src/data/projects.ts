@@ -7,7 +7,7 @@ export interface projectVal {
 	description: string[];
 	focus: string[];
 	relatedURL?: projectURL[];
-	images?: string[];
+	images?: projectURL[];
 }
 
 export interface projectURL {
@@ -45,7 +45,12 @@ export const projectData: projectVal[] = [
 				url: 'https://gangnam.reandyoung.co.kr/main/care',
 			},
 		],
-		images: [''],
+		images: [
+			{ title: '키워드', url: 'reandyoung/keywords.jpg' },
+			{ title: '콘텐츠 관리', url: 'reandyoung/media-content.jpg' },
+			{ title: '예약가능시간', url: 'reandyoung/booking-time.jpg' },
+			{ title: '이벤트 등록 및 수정', url: 'reandyoung/event-create.jpg' },
+		],
 	},
 	{
 		start: '2021.04',
@@ -71,7 +76,11 @@ export const projectData: projectVal[] = [
 				url: 'https://play.google.com/store/apps/details?id=intergrated.coordi.tablet_v2&hl=en-KR',
 			},
 		],
-		images: [''],
+		images: [
+			{ title: '예약현황', url: 'coordi-tablet/status.jpg' },
+			{ title: '월별예약', url: 'coordi-tablet/monthly.jpg' },
+			{ title: '고객차트', url: 'coordi-tablet/chart.jpg' },
+		],
 	},
 	{
 		start: '2020.03',
@@ -83,7 +92,7 @@ export const projectData: projectVal[] = [
 		focus: [''],
 		relatedURL: [
 			{ title: '하우스오브브이', url: 'https://www.houseofv.co.kr' },
-			{ title: '브이성형외과', url: 'https://www.vbeauty.co.kr' },
+			{ title: '브이스퀘어', url: 'https://www.vsquare.kr/' },
 		],
 	},
 	{
@@ -92,20 +101,37 @@ export const projectData: projectVal[] = [
 		name: '서울소울',
 		kind: 'personal',
 		overview: '개인 포트폴리오 외주',
-		description: [''],
-		focus: [''],
-		relatedURL: [],
-		images: [],
+		description: [
+			'포트폴리오 겸 블로그 홈페이지를 작업했습니다.',
+			'기본 구성(사이트맵, 필요 카테고리) 외의 작업은 개인이 작업했습니다.',
+			'게시물 관리에 필요한 WYSIWYG editor 라이브러리를 활용하고 이미지 업로드 기능을 구현했습니다.',
+		],
+		focus: ['사용 기술: HTML5, CSS, JavaScript, PHP, MySQL'],
+		relatedURL: [{ title: '서울소울 홈페이지', url: 'http://seoulsoul.kr/' }],
+		images: [
+			{ title: '메인', url: 'seoulsoul/main.png' },
+			{ title: '게시판', url: 'seoulsoul/board.png' },
+			{ title: '게시물', url: 'seoulsoul/article.png' },
+			{ title: '관리', url: 'seoulsoul/editor.png' },
+		],
 	},
 	{
 		start: '2022.12',
 		end: '2023.02',
 		name: '오늘의 날씨',
 		kind: 'personal',
-		overview: '도시별 현재 날씨 검색 앱',
-		description: [''],
-		focus: [''],
-		relatedURL: [],
-		images: [],
+		overview: '도시별 현재 날씨 검색 웹앱',
+		description: [
+			'OpenWeather의 API를 이용해 위치별 날씨 데이터를 받아와 보여주는 프로젝트입니다.',
+			'도시별로 데이터를 불러오기 위해, API에서 사용하는 도시 아이디를 url에 넣어 구분했습니다.',
+		],
+		focus: [
+			'사용 기술: React.js, Typescript',
+			'라이브러리: react-router, react-query, styled-components, recoil',
+		],
+		relatedURL: [
+			{ title: 'weather app', url: 'https://hyesuhong.github.io/weather_app/' },
+		],
+		images: [{ title: '기본화면', url: 'weather/basic.png' }],
 	},
 ];

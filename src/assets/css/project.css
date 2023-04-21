@@ -116,6 +116,16 @@
 	z-index: -1;
 }
 
+.project__wrap::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4rem;
+	cursor: pointer;
+}
+
 .project__wrap:hover::before {
 	transform: scaleY(1);
 }
@@ -183,6 +193,35 @@
 
 .project__images {
 	grid-area: images;
+	align-self: start;
+	padding: 1rem;
+	min-width: 0;
+}
+
+.project__images-wrapper {
+	height: 8.88vw;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+.project__images-slide {
+	display: flex;
+	height: 100%;
+}
+
+.project__images-img {
+	flex: 1;
+	height: 100%;
+}
+
+.project__images-img > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.project__images-wrapper > img.active {
+	opacity: 1;
 }
 
 .project__details {
@@ -214,9 +253,11 @@
 }
 
 .project__details > ol a {
+	position: relative;
 	display: inline-flex;
 	align-items: center;
 	width: fit-content;
+	border-bottom: 1px solid var(--textColor);
 }
 
 .project__details > ol a::after {
@@ -225,8 +266,8 @@
 	height: 16px;
 	margin-left: 5px;
 	background: var(--textColor);
-	mask: url('../images/ico-link.svg') no-repeat center center;
-	-webkit-mask: url('../images/ico-link.svg') no-repeat center center;
+	mask: url('../images/icons/ico-link.svg') no-repeat center center;
+	-webkit-mask: url('../images/icons/ico-link.svg') no-repeat center center;
 	mask-size: cover;
 	-webkit-mask-size: cover;
 }
@@ -242,6 +283,10 @@
 		grid-template-areas: 'title' 'overview' 'duration' 'details' 'images';
 	}
 
+	.project__wrap::after {
+		display: none;
+	}
+
 	.project__wrap-clicked > div:nth-child(n + 2):nth-child(-n + 3) {
 		color: var(--textColor);
 	}
@@ -252,5 +297,9 @@
 
 	.project__duration {
 		text-align: right;
+	}
+
+	.project__images-wrapper {
+		height: 51.16vw;
 	}
 }
