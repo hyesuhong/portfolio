@@ -1,7 +1,11 @@
 import Section from '../components/Section';
 import { aboutData, IHistory } from '../data/about';
 
-function About() {
+interface IAboutProps {
+	isRef: React.RefObject<HTMLElement>;
+}
+
+function About({ isRef }: IAboutProps) {
 	return (
 		<Section
 			id='about'
@@ -11,6 +15,7 @@ function About() {
 				</>
 			}
 			rightChild={<AboutDetail />}
+			isRef={isRef}
 		/>
 	);
 }
@@ -22,10 +27,10 @@ function AboutDetail() {
 	return (
 		<div className='about'>
 			<p className='about__desc'>
-				{introduce.map((para, i) => (
+				{introduce.map((para, i, paraArr) => (
 					<span key={i}>
 						{para as string}
-						{i !== 0 && <br />}
+						{i !== paraArr.length - 1 && <br />}
 					</span>
 				))}
 			</p>

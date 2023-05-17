@@ -1,5 +1,6 @@
 import { memo, useEffect } from 'react';
 import { projectVal } from '../data/projects';
+import Slide from './Slide';
 
 interface IProjectListProps {
 	data: projectVal;
@@ -34,25 +35,7 @@ const ProjectList = memo(({ data, onClick, current }: IProjectListProps) => {
 			<div className='project__duration'>
 				{start} ~{end && ' ' + end}
 			</div>
-			{images && (
-				<div className='project__images'>
-					<div className='project__images-wrapper'>
-						<div
-							className='project__images-slide'
-							style={{ width: `${100 * images.length}%` }}
-						>
-							{images.map((img, index) => (
-								<div className='project__images-img' key={index}>
-									<img
-										src={require(`../assets/images/projects/${img.url}`)}
-										alt={img.title}
-									/>
-								</div>
-							))}
-						</div>
-					</div>
-				</div>
-			)}
+			{images && current && <Slide images={images} />}
 			<div className='project__details'>
 				{description.map((desc, index) =>
 					desc !== '' ? <p key={index}>{desc.toString()}</p> : null

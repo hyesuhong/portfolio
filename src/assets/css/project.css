@@ -205,13 +205,20 @@
 }
 
 .project__images-slide {
-	display: flex;
+	/* display: flex; */
+	width: 100%;
 	height: 100%;
+	position: relative;
 }
 
 .project__images-img {
-	flex: 1;
+	/* flex: 1; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
+	transition: opacity 0.5s;
 }
 
 .project__images-img > img {

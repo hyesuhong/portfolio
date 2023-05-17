@@ -4,7 +4,11 @@ import { projectData, projectKind } from '../data/projects';
 import ProjectTable from '../components/ProjectTable';
 import Selectlist from '../components/Selectlist';
 
-function Projects() {
+interface IProjectProps {
+	isRef: React.RefObject<HTMLElement>;
+}
+
+function Projects({ isRef }: IProjectProps) {
 	const projectKinds = Object.keys(projectKind);
 	const [pKind, setPKind] = useState(projectKinds[0]);
 
@@ -31,6 +35,7 @@ function Projects() {
 				/>
 			}
 			rightChild={<ProjectTable data={data} />}
+			isRef={isRef}
 		></Section>
 	);
 }

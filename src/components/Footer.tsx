@@ -1,5 +1,4 @@
-import { useContext, useEffect } from 'react';
-import useScroll from '../useScroll';
+import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
 interface IFooterProps {
@@ -7,19 +6,7 @@ interface IFooterProps {
 }
 
 function Footer({ handleTheme }: IFooterProps) {
-	const { scrollY, scrollDirection } = useScroll();
 	const theme = useContext(ThemeContext);
-	const footerEl = document.querySelector('.footer');
-
-	useEffect(() => {
-		if (scrollY === 0 || scrollDirection === 'down') {
-			footerEl?.classList.remove('slideDown');
-			return;
-		} else {
-			if (footerEl?.classList.contains('slideDown')) return;
-			footerEl?.classList.add('slideDown');
-		}
-	}, [footerEl, scrollY, scrollDirection]);
 
 	return (
 		<footer className='footer'>

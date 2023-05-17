@@ -72,6 +72,11 @@
 	transform: translateY(-100%);
 }
 
+.header__nav-item-current::before,
+.header__nav-item-current::after {
+	color: var(--accentColor);
+}
+
 /* @media (max-width: 768px) {
 	
 } */

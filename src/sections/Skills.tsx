@@ -2,7 +2,11 @@ import Section from '../components/Section';
 import SkillList from '../components/SkillList';
 import { skillData } from '../data/skills';
 
-export default function Skills() {
+interface ISkillsProps {
+	isRef: React.RefObject<HTMLElement>;
+}
+
+export default function Skills({ isRef }: ISkillsProps) {
 	const dataKeys = Object.keys(skillData);
 	const skill = dataKeys[0];
 
@@ -17,6 +21,7 @@ export default function Skills() {
 			rightChild={skillData[skill].map((data, key) => (
 				<SkillList data={data} key={key} />
 			))}
+			isRef={isRef}
 		/>
 	);
 }
