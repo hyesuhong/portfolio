@@ -51,3 +51,21 @@ globalStyle('img', {
 globalStyle('button', {
 	cursor: 'pointer',
 });
+
+/* @media (max-width: 1200px) {
+	:root {
+		font-size: 9px;
+	}
+}
+
+@media (max-width: 992px) {
+	:root {
+		font-size: 8px;
+	}
+}
+
+@media (max-width: 768px) {
+	:root {
+		font-size: 7px;
+	}
+} */
