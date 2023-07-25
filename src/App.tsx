@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createContext, useEffect, useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.css.ts';
+
+const isLight = window.matchMedia('(prefers-color-scheme: light)');
+export const ThemeContext = createContext(isLight.matches ? 'light' : 'dark');
 
 function App() {
-  const [count, setCount] = useState(0)
+	// theme switching
+	const [theme, setTheme] = useState(isLight.matches ? 'light' : 'dark');
+	const handleTheme = () => {
+		setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+	};
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	useEffect(() => {
+		document.documentElement.classList.remove(
+			theme === 'light' ? 'dark' : 'light'
+		);
+		document.documentElement.classList.add(
+			theme === 'light' ? 'light' : 'dark'
+		);
+	}, [theme]);
+
+	return (
+		<>
+			<ThemeContext.Provider value={theme}>
+				<input type='checkbox' name='' id='' onChange={handleTheme} />
+			</ThemeContext.Provider>
+		</>
+	);
 }
 
-export default App
+export default App;
