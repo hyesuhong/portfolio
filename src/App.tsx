@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import Header from './components/Header.tsx';
+import Loader from './components/Loader.tsx';
 
 const isLight = window.matchMedia('(prefers-color-scheme: light)');
 export const ThemeContext = createContext(isLight.matches ? 'light' : 'dark');
@@ -10,6 +11,16 @@ function App() {
 	const handleTheme = () => {
 		setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
 	};
+
+	const [loaderVisible, setLoaderVisible] = useState(true);
+
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setLoaderVisible(false);
+		}, 1000);
+
+		return () => clearTimeout(timer);
+	}, []);
 
 	useEffect(() => {
 		document.documentElement.classList.remove(
@@ -24,6 +35,7 @@ function App() {
 		<>
 			<ThemeContext.Provider value={theme}>
 				<Header position={0} />
+				<Loader visible={loaderVisible} />
 			</ThemeContext.Provider>
 		</>
 	);
