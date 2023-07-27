@@ -27,6 +27,8 @@ export const section = styleVariants({
 const articleBase = style({
 	flex: 1,
 	minWidth: 0,
+	fontSize: '1.4rem',
+	fontWeight: 300,
 });
 
 export const article = styleVariants({
@@ -68,15 +70,3 @@ export const title = style({
 		},
 	},
 });
-
-// export const title = styleVariants({
-// 	section: [titleBase],
-// 	article: [
-// 		titleBase,
-// 		{
-// 			alignSelf: 'flex-start',
-// 			paddingLeft: '2rem',
-// 			textAlign: 'left',
-// 		},
-// 	],
-// });
