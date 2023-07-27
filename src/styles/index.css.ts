@@ -1,7 +1,8 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { themeVars } from './theme.css.ts';
+import { dataObj } from '../typeSet.ts';
 
-type StyleObject = { [key: string]: string };
+type StyleObject = dataObj<string>;
 
 interface IResponsiveStyle {
 	laptop?: StyleObject;

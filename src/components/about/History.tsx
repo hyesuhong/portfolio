@@ -1,7 +1,8 @@
+import { dataObj } from '../../typeSet';
 import HistoryCard, { HistoryType } from './HistoryCard';
 
 interface IHistory {
-	data: { [key: string]: HistoryType[] };
+	data: dataObj<HistoryType[]>;
 }
 
 export default function History({ data }: IHistory) {

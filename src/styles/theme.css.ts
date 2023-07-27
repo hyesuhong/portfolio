@@ -16,6 +16,7 @@ export const themeVars = createGlobalThemeContract({
 		background: 'bgColor',
 		text: 'textColor',
 		accent: 'accentColor',
+		shadow: 'shadowColor',
 	},
 });
 
@@ -23,7 +24,8 @@ createGlobalTheme(':root.light', themeVars, {
 	color: {
 		background: colorVars.lightPurple,
 		text: colorVars.black,
-		accent: '#9747ff',
+		accent: colorVars.accentPurple,
+		shadow: colorVars.black,
 	},
 });
 
@@ -32,5 +34,6 @@ createGlobalTheme(':root.dark', themeVars, {
 		background: colorVars.black,
 		text: colorVars.lightPurple,
 		accent: colorVars.accentPurple,
+		shadow: colorVars.white,
 	},
 });

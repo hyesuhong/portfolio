@@ -1,0 +1,25 @@
+{
+	"frontend": [
+		{ "name": "Javascript", "slug": "javascript" },
+		{ "name": "Typescript", "slug": "typescript" },
+		{ "name": "React.js", "slug": "react" },
+		{ "name": "Next.js", "slug": "nextdotjs" },
+		{ "name": "HTML", "slug": "html5" },
+		{ "name": "CSS", "slug": "css3" }
+	],
+	"backend": [
+		{ "name": "Node.js", "slug": "nodedotjs" },
+		{ "name": "Express", "slug": "express" },
+		{ "name": "PHP", "slug": "php" }
+	],
+	"database": [
+		{ "name": "Mysql", "slug": "mysql" },
+		{ "name": "MongoDB", "slug": "mongodb" }
+	],
+	"version control": [{ "name": "Git", "slug": "git" }],
+	"etc": [
+		{ "name": "Figma", "slug": "figma" },
+		{ "name": "Notion", "slug": "notion" },
+		{ "name": "Slack", "slug": "slack" }
+	]
+}
