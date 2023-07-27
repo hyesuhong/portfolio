@@ -6,13 +6,13 @@ interface ILogo {
 	animated?: boolean;
 	width?: string | number;
 	height?: string | number;
+	color?: string;
 }
 
-export default function Logo({ animated, width, height }: ILogo) {
+export default function Logo({ animated, width, height, color }: ILogo) {
 	const sizeClass = width || height ? svg['fixed'] : svg['variable'];
-	const sizeStyle = width || height ? { width, height } : undefined;
 
-	const props = { className: sizeClass, style: sizeStyle };
+	const props = { className: sizeClass, style: { width, height, fill: color } };
 
 	return (
 		<>{animated ? <IcoLogoAnimate {...props} /> : <IcoLogo {...props} />}</>
