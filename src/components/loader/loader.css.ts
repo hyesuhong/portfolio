@@ -1,7 +1,6 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { colorVars } from './theme.css';
 
-const loaderWrapBase = style({
+const wrapperBase = style({
 	position: 'fixed',
 	top: 0,
 	left: 0,
@@ -13,16 +12,13 @@ const loaderWrapBase = style({
 	backdropFilter: 'blur(5px)',
 
 	display: 'flex',
+	justifyContent: 'center',
+	alignItems: 'center',
 
 	transition: 'all 0.3s',
 });
 
 export const loaderWrap = styleVariants({
-	show: [loaderWrapBase, { visibility: 'visible', opacity: 1 }],
-	hide: [loaderWrapBase, { visibility: 'hidden', opacity: 0 }],
-});
-
-export const loaderLogo = style({
-	margin: 'auto',
-	fill: colorVars.lightPurple,
+	show: [wrapperBase, { visibility: 'visible', opacity: 1 }],
+	hide: [wrapperBase, { visibility: 'hidden', opacity: 0 }],
 });

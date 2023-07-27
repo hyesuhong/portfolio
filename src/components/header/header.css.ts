@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { themeVars } from './theme.css';
+import { themeVars } from '../../styles/theme.css';
 
 export const headerContainer = style({
 	position: 'fixed',
@@ -32,24 +32,17 @@ export const headerSlideUp = style([
 	},
 ]);
 
-export const headerLogo = style({
+export const logoWrap = style({
 	height: '3rem',
 	flex: '0 0 3rem',
-
-	cursor: 'pointer',
-});
-
-export const headerLogoIcon = style({
-	width: '100%',
-	height: '100%',
-	fill: themeVars.color.text,
+	// cursor: 'pointer',
 });
 
 export const headerNav = style({
 	display: 'flex',
 });
 
-export const headerNavList = style({
+export const headerNavItem = style({
 	position: 'relative',
 	fontSize: '1.6rem',
 	fontWeight: 300,
@@ -96,8 +89,8 @@ export const headerNavList = style({
 	},
 });
 
-export const headerNavListCurrent = style([
-	headerNavList,
+export const headerNavItemCurrent = style([
+	headerNavItem,
 	{
 		vars: {
 			'--peseudoColor': themeVars.color.accent,

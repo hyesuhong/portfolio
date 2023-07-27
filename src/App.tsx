@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext.tsx';
 import useToggleTheme from './hooks/useToggleTheme.tsx';
-import Header from './components/Header.tsx';
-import Loader from './components/Loader.tsx';
-import Footer from './components/Footer.tsx';
+import Header from './layouts/Header.tsx';
+import Loader from './layouts/Loader.tsx';
+import Footer from './layouts/Footer.tsx';
 
 function App() {
 	const theme = useTheme();
@@ -24,7 +24,7 @@ function App() {
 	return (
 		<>
 			<ThemeProvider>
-				<Header position={0} />
+				<Header />
 				<Footer />
 			</ThemeProvider>
 			<Loader visible={loaderVisible} />
