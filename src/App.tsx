@@ -4,6 +4,7 @@ import useToggleTheme from './hooks/useToggleTheme.tsx';
 import Header from './layouts/Header.tsx';
 import Loader from './layouts/Loader.tsx';
 import Footer from './layouts/Footer.tsx';
+import Main from './layouts/Main.tsx';
 
 function App() {
 	const theme = useTheme();
@@ -25,6 +26,7 @@ function App() {
 		<>
 			<ThemeProvider>
 				<Header />
+				<Main />
 				<Footer />
 			</ThemeProvider>
 			<Loader visible={loaderVisible} />
