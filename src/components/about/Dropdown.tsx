@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { checkClosedSyllable } from '../../utils/checkSyllable';
 import {
 	dropdownWrap,
@@ -43,10 +43,6 @@ export default function Dropdown({
 		}
 	};
 
-	const onChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
-		// console.log(ev.target.value);
-	};
-
 	return (
 		<div className={dropdownWrap} data-post='을' ref={wrapRef}>
 			<input
@@ -54,7 +50,6 @@ export default function Dropdown({
 				className={dropdownInput}
 				readOnly
 				value={currentKey}
-				onChange={onChange}
 				ref={inputRef}
 			/>
 			<ul className={dropdownList} tabIndex={-1}>

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { colorVars, themeVars } from '../../styles/theme.css';
+import { themeVars } from '../../styles/theme.css';
 
 export const wrapper = style({
 	width: '100%',
