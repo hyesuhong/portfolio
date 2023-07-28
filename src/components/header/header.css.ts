@@ -94,7 +94,7 @@ export const headerNavItemCurrent = style([
 	headerNavItem,
 	{
 		vars: {
-			'--peseudoColor': themeVars.color.accent,
+			'--peseudoColor': themeVars.color.purple.accent,
 		},
 	},
 ]);

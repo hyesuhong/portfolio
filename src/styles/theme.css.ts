@@ -15,25 +15,31 @@ export const themeVars = createGlobalThemeContract({
 	color: {
 		background: 'bgColor',
 		text: 'textColor',
-		accent: 'accentColor',
-		shadow: 'shadowColor',
+		purple: {
+			accent: 'accentColor',
+			light: 'lightColor',
+		},
 	},
 });
 
 createGlobalTheme(':root.light', themeVars, {
 	color: {
-		background: colorVars.lightPurple,
+		background: colorVars.white,
 		text: colorVars.black,
-		accent: colorVars.accentPurple,
-		shadow: colorVars.black,
+		purple: {
+			accent: colorVars.accentPurple,
+			light: colorVars.lightPurple,
+		},
 	},
 });
 
 createGlobalTheme(':root.dark', themeVars, {
 	color: {
 		background: colorVars.black,
-		text: colorVars.lightPurple,
-		accent: colorVars.accentPurple,
-		shadow: colorVars.white,
+		text: colorVars.white,
+		purple: {
+			accent: colorVars.accentPurple,
+			light: colorVars.lightPurple,
+		},
 	},
 });

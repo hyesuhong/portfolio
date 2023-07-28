@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { colorVars, themeVars } from '../../styles/theme.css';
 
 export const wrapper = style({
 	width: '100%',
@@ -13,9 +14,23 @@ export const wrapper = style({
 	padding: '10rem 2rem 10rem 1rem',
 });
 
+const title = style({
+	fontSize: '1.8rem',
+	fontWeight: 500,
+});
+
 export const introWrap = style({
 	gridColumn: 'span 3',
 });
+
+export const introTitleWrap = style({
+	display: 'flex',
+	gap: '1rem',
+	alignItems: 'center',
+	marginBottom: '1rem',
+});
+
+export const introTitle = style([title]);
 
 export const para = style({
 	lineHeight: '160%',
@@ -29,11 +44,12 @@ export const historyWrap = style({
 	gridColumn: 'span 2',
 });
 
-export const historyTitle = style({
-	fontSize: '1.8rem',
-	fontWeight: 500,
-	textTransform: 'capitalize',
-});
+export const historyTitle = style([
+	title,
+	{
+		textTransform: 'capitalize',
+	},
+]);
 
 export const historyDetail = style({
 	marginTop: '1rem',
@@ -64,3 +80,96 @@ export const historyDetailPara = style([
 		gridColumn: '2/3',
 	},
 ]);
+
+export const dropdownWrap = style({
+	position: 'relative',
+	width: 'max-content',
+	height: '3rem',
+
+	display: 'flex',
+	alignItems: 'center',
+	gap: '0.5rem',
+
+	fontSize: '1.8rem',
+	fontWeight: 500,
+
+	'::before': {
+		content: '',
+		position: 'absolute',
+		top: '50%',
+		right: '2.5rem',
+		width: '0.5rem',
+		height: '0.5rem',
+		borderBottom: `1px solid ${themeVars.color.text}`,
+		borderLeft: `1px solid ${themeVars.color.text}`,
+		transform: 'rotate(-45deg)',
+
+		transition: 'transform 0.3s',
+	},
+
+	'::after': {
+		content: 'attr(data-post)',
+		verticalAlign: 'middle',
+	},
+
+	selectors: {
+		[`&:focus-within::before`]: {
+			transform: 'rotate(135deg)',
+		},
+	},
+});
+
+export const dropdownInput = style({
+	// width: '100%',
+
+	height: '100%',
+	padding: '0.5rem 2rem 0.5rem 0.5rem',
+
+	border: 'none',
+	borderBottom: `2px solid ${themeVars.color.purple.light}`,
+	outline: 'none',
+	background: 'transparent',
+	color: themeVars.color.text,
+
+	fontSize: 'inherit',
+
+	selectors: {
+		[`${dropdownWrap}:focus-within &`]: {
+			borderBottomColor: themeVars.color.purple.accent,
+		},
+	},
+});
+
+export const dropdownList = style({
+	position: 'absolute',
+	top: '100%',
+	left: 0,
+	width: 'max-content',
+
+	transform: 'translateY(0.5rem) scaleY(0)',
+	transformOrigin: 'top center',
+
+	background: themeVars.color.background,
+	border: `1px solid ${themeVars.color.text}`,
+
+	zIndex: 1,
+
+	transition: 'transform 0.3s',
+
+	selectors: {
+		[`${dropdownWrap}:focus-within &`]: {
+			transform: 'translateY(0.5rem) scaleY(100%)',
+		},
+	},
+});
+
+export const dropdownItem = style({
+	fontSize: '1.8rem',
+	padding: '0.5rem',
+	cursor: 'pointer',
+	transition: 'background 0.3s',
+
+	':hover': {
+		background: themeVars.color.purple.light,
+	},
+});

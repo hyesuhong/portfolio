@@ -11,7 +11,7 @@ export type HistoryType = {
 	start: string;
 	end?: string;
 	name: string;
-	detail?: string;
+	detail?: string | string[];
 };
 
 interface IHistoryCard {
@@ -27,15 +27,23 @@ export default function HistoryCard({ title, data }: IHistoryCard) {
 			</dt>
 			<dd className={historyDetail}>
 				<ul>
-					{data.map((history, index) => {
-						const { start, end, name, detail } = history;
+					{data.map(({ start, end, name, detail }, index) => {
 						const duration = end ? `${start} ~ ${end}` : `${start} ~`;
 
 						return (
 							<li key={index} className={historyDetailItem}>
 								<span className={historyDetailDur}>{duration}</span>
 								<h4>{name}</h4>
-								{detail && <p className={historyDetailPara}>{detail}</p>}
+								{detail && (
+									<p
+										className={historyDetailPara}
+										dangerouslySetInnerHTML={{
+											__html: Array.isArray(detail)
+												? detail.join('<br/>')
+												: detail,
+										}}
+									></p>
+								)}
 							</li>
 						);
 					})}
