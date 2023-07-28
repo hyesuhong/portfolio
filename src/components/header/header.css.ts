@@ -50,6 +50,7 @@ export const headerNavItem = style({
 	color: 'transparent',
 	overflow: 'hidden',
 	marginLeft: '2.4rem',
+	textTransform: 'capitalize',
 
 	vars: {
 		'--peseudoColor': themeVars.color.text,
