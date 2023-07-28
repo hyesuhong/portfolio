@@ -53,6 +53,7 @@ export const article = styleVariants({
 		articleBase,
 		{
 			minHeight: '100vh',
+			paddingTop: '10rem',
 		},
 	],
 });

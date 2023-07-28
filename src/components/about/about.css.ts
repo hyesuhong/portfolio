@@ -11,7 +11,7 @@ export const wrapper = style({
 	alignContent: 'end',
 	gap: '3rem 2rem',
 
-	padding: '10rem 2rem 10rem 1rem',
+	padding: '0 2rem 10rem 1rem',
 });
 
 const title = style({

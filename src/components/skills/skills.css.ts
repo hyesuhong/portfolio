@@ -8,9 +8,6 @@ export const skillWrap = style({
 	alignItems: 'center',
 	padding: '4rem 1rem',
 	borderBottom: `1px solid ${themeVars.color.text}`,
-	':first-child': {
-		paddingTop: '10rem',
-	},
 });
 
 export const listTitleWrap = style({
