@@ -262,3 +262,26 @@ export const projectUrl = style({
 		WebkitMaskSize: 'cover',
 	},
 });
+
+export const slideContainer = style({
+	height: '8.88vw',
+	overflowX: 'auto',
+	overflowY: 'hidden',
+});
+
+export const slideWrapper = style({
+	display: 'flex',
+	width: '100%',
+	height: '100%',
+	transition: 'transform 0.5s linear',
+});
+
+export const slideSlide = style({
+	flex: 1,
+});
+
+export const slideImage = style({
+	width: '100%',
+	height: '100%',
+	objectFit: 'contain',
+});

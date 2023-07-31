@@ -1,3 +1,4 @@
+import Slide from './Slide';
 import {
 	projectDesc,
 	projectDetailList,
@@ -49,9 +50,13 @@ export default function DataList({ data, kind, current, onClick }: IDataList) {
 				<span>{overview}</span>
 			</div>
 			<div className={projectValue['duration']}>
-				{start} ~{end && ' ' + end}
+				{end ? `${start} ~ ${end}` : start}
 			</div>
-			{/* {images && current && <Slide images={images} />} */}
+			{images && current && (
+				<div className={projectValue['images']}>
+					<Slide images={images} />
+				</div>
+			)}
 			<div className={projectValue['details']}>
 				{stack && (
 					<ul className={projectDetailList['stack']}>
