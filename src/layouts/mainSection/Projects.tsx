@@ -65,7 +65,7 @@ export default function Projects() {
 				/>
 			</Article>
 			<Article position='right'>
-				<DataTable dataList={passData} kind={'personal'} />
+				<DataTable dataList={passData} kind={currentKind} />
 			</Article>
 		</Section>
 	);

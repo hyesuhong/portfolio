@@ -1,30 +1,69 @@
 import { style } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
 import { svg } from '../icon/icon.css';
+import { responsiveStyle } from '../../utils/responsiveStyle';
 
-export const skillWrap = style({
-	display: 'flex',
-	justifyContent: 'space-between',
-	alignItems: 'center',
-	padding: '4rem 1rem',
-	borderBottom: `1px solid ${themeVars.color.text}`,
-});
+export const skillWrap = style([
+	{
+		display: 'flex',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		padding: '4rem 1rem',
+		borderBottom: `1px solid ${themeVars.color.text}`,
+	},
+	responsiveStyle({
+		mobile: {
+			flexDirection: 'column',
+			alignItems: 'flex-start',
+			justifyContent: 'flex-start',
+			padding: '1rem 0',
+			margin: '0 1rem',
 
-export const listTitleWrap = style({
-	flex: '0 0 15rem',
-});
+			':last-child': {
+				borderBottom: 'none',
+				marginBottom: '5rem',
+			},
+		},
+	}),
+]);
 
-export const listTitle = style({
-	fontSize: '3.2rem',
-	fontWeight: 700,
-	textTransform: 'capitalize',
-});
+export const listTitleWrap = style([
+	{
+		flex: '0 0 15rem',
+	},
+	responsiveStyle({
+		mobile: {
+			flex: '1',
+			marginBottom: '3rem',
+		},
+	}),
+]);
 
-export const skillListWrap = style({
-	flex: 1,
-	paddingLeft: '2rem',
-	paddingRight: '1rem',
-});
+export const listTitle = style([
+	{
+		fontSize: '3.2rem',
+		fontWeight: 700,
+		textTransform: 'capitalize',
+	},
+	responsiveStyle({
+		mobile: {
+			fontSize: '2.4rem',
+		},
+	}),
+]);
+
+export const skillListWrap = style([
+	{
+		flex: 1,
+		paddingLeft: '2rem',
+		paddingRight: '1rem',
+	},
+	responsiveStyle({
+		mobile: {
+			padding: 0,
+		},
+	}),
+]);
 
 export const skillList = style({
 	display: 'flex',
@@ -56,18 +95,31 @@ export const skillIcon = style([
 			},
 		},
 	},
+	responsiveStyle({
+		mobile: {
+			transform: 'translateY(0)',
+		},
+	}),
 ]);
 
-export const skillTitle = style({
-	marginTop: '1rem',
-	transform: 'translateY(100%)',
-	opacity: 0,
-	transition: 'transform 0.3s, opacity 0.5s',
+export const skillTitle = style([
+	{
+		marginTop: '1rem',
+		transform: 'translateY(100%)',
+		opacity: 0,
+		transition: 'transform 0.3s, opacity 0.5s',
 
-	selectors: {
-		[`${skillItem}:hover &`]: {
+		selectors: {
+			[`${skillItem}:hover &`]: {
+				transform: 'translateY(0)',
+				opacity: 1,
+			},
+		},
+	},
+	responsiveStyle({
+		mobile: {
 			transform: 'translateY(0)',
 			opacity: 1,
 		},
-	},
-});
+	}),
+]);

@@ -1,34 +1,60 @@
 import { style } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
+import { responsiveStyle } from '../../utils/responsiveStyle';
 
-export const wrapper = style({
-	width: '100%',
-	height: '100%',
+export const wrapper = style([
+	{
+		width: '100%',
+		height: '100%',
 
-	display: 'grid',
-	gridTemplateColumns: 'repeat(4, 1fr)',
-	gridAutoRows: 'max-content',
-	alignContent: 'end',
-	gap: '3rem 2rem',
+		display: 'grid',
+		gridTemplateColumns: 'repeat(4, 1fr)',
+		gridAutoRows: 'max-content',
+		alignContent: 'end',
+		gap: '3rem 2rem',
 
-	padding: '0 2rem 10rem 1rem',
-});
+		padding: '0 2rem 10rem 1rem',
+	},
+	responsiveStyle({
+		mobile: {
+			gridTemplateColumns: 'repeat(5, 1fr)',
+			gap: '2rem 1rem',
+			padding: '10rem 1rem 3rem',
+		},
+	}),
+]);
 
 const title = style({
 	fontSize: '1.8rem',
 	fontWeight: 500,
 });
 
-export const introWrap = style({
-	gridColumn: 'span 3',
-});
+export const introWrap = style([
+	{
+		gridColumn: 'span 3',
+	},
+	responsiveStyle({
+		mobile: {
+			gridColumn: 'span 5',
+			marginBottom: '4rem',
+		},
+	}),
+]);
 
-export const introTitleWrap = style({
-	display: 'flex',
-	gap: '1rem',
-	alignItems: 'center',
-	marginBottom: '1rem',
-});
+export const introTitleWrap = style([
+	{
+		display: 'flex',
+		gap: '1rem',
+		alignItems: 'center',
+		marginBottom: '1rem',
+	},
+	responsiveStyle({
+		mobile: {
+			flexDirection: 'column',
+			alignItems: 'flex-start',
+		},
+	}),
+]);
 
 export const introTitle = style([title]);
 
@@ -40,9 +66,16 @@ export const para = style({
 	},
 });
 
-export const historyWrap = style({
-	gridColumn: 'span 2',
-});
+export const historyWrap = style([
+	{
+		gridColumn: 'span 2',
+	},
+	responsiveStyle({
+		mobile: {
+			gridColumn: 'span 5',
+		},
+	}),
+]);
 
 export const historyTitle = style([
 	title,

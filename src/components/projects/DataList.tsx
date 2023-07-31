@@ -9,7 +9,8 @@ import {
 	projectValue,
 } from './projects.css';
 
-export type projectKind = 'all' | 'work' | 'personal';
+// export type projectKind = 'all' | 'work' | 'personal';
+export type projectKind = string;
 
 export type project = {
 	start: string;

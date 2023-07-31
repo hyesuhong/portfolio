@@ -1,16 +1,25 @@
 import { style, styleVariants } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
+import { responsiveStyle } from '../../utils/responsiveStyle';
 
 export const main = style({});
 
-const sectionBase = style({
-	display: 'flex',
-	minHeight: '100vh',
-	borderBottom: `1px solid ${themeVars.color.text}`,
-	':last-child': {
-		borderBottom: 'none',
+const sectionBase = style([
+	{
+		display: 'flex',
+		minHeight: '100vh',
+		borderBottom: `1px solid ${themeVars.color.text}`,
+		':last-child': {
+			borderBottom: 'none',
+		},
 	},
-});
+	responsiveStyle({
+		mobile: {
+			flexDirection: 'column',
+			minHeight: 'auto',
+		},
+	}),
+]);
 
 export const section = styleVariants({
 	default: [sectionBase],
@@ -48,6 +57,14 @@ export const article = styleVariants({
 
 			zIndex: 1,
 		},
+		responsiveStyle({
+			mobile: {
+				flexWrap: 'wrap',
+				height: 'auto',
+				borderRight: 'none',
+				padding: '5rem 0 0',
+			},
+		}),
 	],
 	right: [
 		articleBase,
@@ -55,19 +72,41 @@ export const article = styleVariants({
 			minHeight: '100vh',
 			paddingTop: '10rem',
 		},
+		responsiveStyle({
+			mobile: {
+				minHeight: 'auto',
+				paddingTop: '4rem',
+			},
+		}),
 	],
 });
 
-export const title = style({
-	fontSize: '6.4rem',
-	fontWeight: 100,
-	textAlign: 'center',
+export const title = style([
+	{
+		fontSize: '6.4rem',
+		fontWeight: 100,
+		textAlign: 'center',
 
-	selectors: {
-		[`${article['left']} > &`]: {
-			alignSelf: 'flex-start',
-			paddingLeft: '2rem',
-			textAlign: 'left',
+		selectors: {
+			[`${article['left']} > &`]: {
+				alignSelf: 'flex-start',
+				paddingLeft: '2rem',
+				textAlign: 'left',
+			},
 		},
 	},
-});
+	responsiveStyle({
+		mobile: {
+			fontSize: '3.2rem',
+			selectors: {
+				[`${article['left']} > &`]: {
+					width: '100%',
+					fontSize: '1.8rem',
+					padding: '1rem',
+					borderBottom: `1px solid ${themeVars.color.text}`,
+					background: themeVars.color.background,
+				},
+			},
+		},
+	}),
+]);

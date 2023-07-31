@@ -1,24 +1,45 @@
 import { CSSProperties, style, styleVariants } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
 import IcoLink from '../../assets/icons/ico-link.svg';
+import { responsiveStyle } from '../../utils/responsiveStyle';
 
-console.log(IcoLink);
-
-export const navList = style({
-	width: 'max-content',
-	paddingRight: '1rem',
-});
-
-export const navItem = style({
-	textTransform: 'uppercase',
-	fontSize: '2rem',
-	marginBottom: '2rem',
-	textAlign: 'right',
-
-	':last-child': {
-		marginBottom: 0,
+export const navList = style([
+	{
+		width: 'max-content',
+		paddingRight: '1rem',
 	},
-});
+	responsiveStyle({
+		mobile: {
+			width: '100%',
+			display: 'flex',
+			justifyContent: 'flex-end',
+			padding: '2rem 1rem',
+		},
+	}),
+]);
+
+export const navItem = style([
+	{
+		textTransform: 'uppercase',
+		fontSize: '2rem',
+		marginBottom: '2rem',
+		textAlign: 'right',
+
+		':last-child': {
+			marginBottom: 0,
+		},
+	},
+	responsiveStyle({
+		mobile: {
+			fontSize: '1.6rem',
+			marginBottom: 0,
+			marginRight: '2rem',
+			':last-child': {
+				marginRight: 0,
+			},
+		},
+	}),
+]);
 
 export const navInput = style({
 	display: 'none',
@@ -56,52 +77,71 @@ export const navLabel = style({
 	},
 });
 
-export const projectTable = style({});
+export const projectTable = style([
+	responsiveStyle({
+		mobile: {
+			minHeight: 'calc(100vh - 10.6rem)',
+		},
+	}),
+]);
 
-const projectListBase = style({
-	position: 'relative',
-	display: 'grid',
-	gridTemplate: '4rem max-content / repeat(2, 2fr) 1fr',
-	gridTemplateAreas: `'title overview duration' 'images details empty'`,
-	alignItems: 'center',
+const projectListBase = style([
+	{
+		position: 'relative',
+		display: 'grid',
+		gridTemplate: '4rem max-content / repeat(2, 2fr) 1fr',
+		gridTemplateAreas: `'title overview duration' 'images details empty'`,
+		alignItems: 'center',
 
-	maxHeight: '4rem',
-	overflow: 'hidden',
+		maxHeight: '4rem',
+		overflow: 'hidden',
 
-	transition: 'all 0.5s',
-	zIndex: 0,
+		transition: 'all 0.5s',
+		zIndex: 0,
 
-	'::before': {
-		content: '',
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		width: '100%',
-		height: '4rem',
-		background: themeVars.color.text,
-		opacity: 0.3,
-		transform: 'scaleY(0)',
-		transformOrigin: 'bottom center',
-		transition: 'transform 0.3s, opacity 0.3s',
-		zIndex: -1,
-	},
+		'::before': {
+			content: '',
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			width: '100%',
+			height: '4rem',
+			background: themeVars.color.text,
+			opacity: 0.3,
+			transform: 'scaleY(0)',
+			transformOrigin: 'bottom center',
+			transition: 'transform 0.3s, opacity 0.3s',
+			zIndex: -1,
+		},
 
-	'::after': {
-		content: '',
-		position: 'absolute',
-		top: 0,
-		left: 0,
-		width: '100%',
-		height: '4rem',
-		cursor: 'pointer',
-	},
+		'::after': {
+			content: '',
+			position: 'absolute',
+			top: 0,
+			left: 0,
+			width: '100%',
+			height: '4rem',
+			cursor: 'pointer',
+		},
 
-	selectors: {
-		['&:hover::before']: {
-			transform: 'scaleY(1)',
+		selectors: {
+			['&:hover::before']: {
+				transform: 'scaleY(1)',
+			},
 		},
 	},
-});
+	responsiveStyle({
+		mobile: {
+			gridTemplateColumns: '1fr',
+			gridAutoRows: 'max-content',
+			gridTemplateAreas: `'title' 'overview' 'duration' 'details' 'images'`,
+
+			'::after': {
+				display: 'none',
+			},
+		},
+	}),
+]);
 
 export const projectList = styleVariants({
 	default: [projectListBase],
@@ -119,19 +159,31 @@ export const projectList = styleVariants({
 	],
 });
 
-const projectValueBase = style({
-	paddingLeft: '1rem',
+const projectValueBase = style([
+	{
+		paddingLeft: '1rem',
 
-	selectors: {
-		[`${projectList['clicked']} &:nth-child(-n + 3)`]: {
-			color: themeVars.color.background,
-		},
-		[`${projectList['clicked']} &:nth-child(-n + 3)::before`]: {
-			background: themeVars.color.background,
-			color: themeVars.color.text,
+		selectors: {
+			[`${projectList['clicked']} &:nth-child(-n + 3)`]: {
+				color: themeVars.color.background,
+			},
+			[`${projectList['clicked']} &:nth-child(-n + 3)::before`]: {
+				background: themeVars.color.background,
+				color: themeVars.color.text,
+			},
 		},
 	},
-});
+	responsiveStyle({
+		mobile: {
+			padding: '1rem',
+			selectors: {
+				[`${projectList['clicked']} &:nth-child(n+2):nth-child(-n + 3)`]: {
+					color: themeVars.color.text,
+				},
+			},
+		},
+	}),
+]);
 
 export const projectValue = styleVariants({
 	title: [
@@ -177,6 +229,11 @@ export const projectValue = styleVariants({
 		{
 			gridArea: 'duration',
 		},
+		responsiveStyle({
+			mobile: {
+				textAlign: 'right',
+			},
+		}),
 	],
 	images: [
 		projectValueBase,
@@ -263,11 +320,18 @@ export const projectUrl = style({
 	},
 });
 
-export const slideContainer = style({
-	height: '8.88vw',
-	overflowX: 'auto',
-	overflowY: 'hidden',
-});
+export const slideContainer = style([
+	{
+		height: '8.88vw',
+		overflowX: 'hidden',
+		overflowY: 'hidden',
+	},
+	responsiveStyle({
+		mobile: {
+			height: '51.16vw',
+		},
+	}),
+]);
 
 export const slideWrapper = style({
 	display: 'flex',

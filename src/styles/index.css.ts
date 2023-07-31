@@ -1,22 +1,5 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { themeVars } from './theme.css.ts';
-import { dataObj } from '../typeSet.ts';
-
-type StyleObject = dataObj<string>;
-
-interface IResponsiveStyle {
-	laptop?: StyleObject;
-	tablet?: StyleObject;
-	mobile?: StyleObject;
-}
-
-const responsiveStyle = ({ laptop, tablet, mobile }: IResponsiveStyle) => ({
-	'@media': {
-		'screen and (max-width: 1200px)': laptop,
-		'screen and (max-width: 992px)': tablet,
-		'screen and (max-width: 768px)': mobile,
-	},
-});
 
 globalStyle('*', {
 	margin: 0,

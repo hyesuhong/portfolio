@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import DataList, { project, projectKind } from './DataList';
+import { projectTable } from './projects.css';
 
 interface IDataTable {
 	dataList: project[];
@@ -25,7 +26,7 @@ export default function DataTable({ dataList, kind }: IDataTable) {
 	}, [dataList]);
 
 	return (
-		<>
+		<div className={projectTable}>
 			{dataList.map((data, index) => (
 				<DataList
 					data={data}
@@ -35,6 +36,6 @@ export default function DataTable({ dataList, kind }: IDataTable) {
 					onClick={onClick}
 				/>
 			))}
-		</>
+		</div>
 	);
 }
