@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import { NavProvider } from './contexts/NavContext.tsx';
 import useToggleTheme from './hooks/useToggleTheme';
 import Header from './layouts/Header.tsx';
 import Loader from './layouts/Loader.tsx';
@@ -16,8 +17,10 @@ function App() {
 	return (
 		<>
 			<ThemeProvider>
-				<Header />
-				<Main />
+				<NavProvider>
+					<Header />
+					<Main />
+				</NavProvider>
 				<Footer />
 			</ThemeProvider>
 			<Loader />
