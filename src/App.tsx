@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import { ThemeProvider, useTheme } from './contexts/ThemeContext.tsx';
-import useToggleTheme from './hooks/useToggleTheme.tsx';
+import { useEffect } from 'react';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
+import useToggleTheme from './hooks/useToggleTheme';
 import Header from './layouts/Header.tsx';
 import Loader from './layouts/Loader.tsx';
 import Footer from './layouts/Footer.tsx';
@@ -8,15 +8,6 @@ import Main from './layouts/Main.tsx';
 
 function App() {
 	const theme = useTheme();
-	const [loaderVisible, setLoaderVisible] = useState(true);
-
-	useEffect(() => {
-		const timer = setTimeout(() => {
-			setLoaderVisible(false);
-		}, 1000);
-
-		return () => clearTimeout(timer);
-	}, []);
 
 	useEffect(() => {
 		useToggleTheme(theme, true);
@@ -29,7 +20,7 @@ function App() {
 				<Main />
 				<Footer />
 			</ThemeProvider>
-			<Loader visible={loaderVisible} />
+			<Loader />
 		</>
 	);
 }
