@@ -3,8 +3,8 @@ import { section } from './contents.css';
 
 interface ISection {
 	children: ReactNode;
-	sectionRef: RefObject<HTMLElement>;
-	sectionId: string;
+	sectionRef?: RefObject<HTMLElement>;
+	sectionId?: string;
 }
 
 export default function Section({ children, sectionRef, sectionId }: ISection) {
