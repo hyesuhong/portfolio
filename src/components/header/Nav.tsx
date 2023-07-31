@@ -7,7 +7,7 @@ interface INav {
 }
 
 export default function Nav({ list, targetIndex }: INav) {
-	const onClick = (ev: React.MouseEvent<HTMLUListElement>) => {
+	const onClick = (ev: React.MouseEvent<HTMLLIElement>) => {
 		const { target } = ev;
 		const t = target as HTMLElement;
 
