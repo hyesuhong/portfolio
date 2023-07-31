@@ -33,5 +33,6 @@
 		"typescript": "^5.0.2",
 		"vite": "^4.4.5",
 		"vite-plugin-svgr": "^3.2.0"
-	}
+	},
+	"homepage": "https://hyesuhong.github.io/portfolio/"
 }
