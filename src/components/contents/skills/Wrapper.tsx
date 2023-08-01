@@ -1,3 +1,4 @@
+import Text from '../../basic/Text';
 import SkillItem, { ISkillItem } from './SkillItem';
 import {
 	skillList,
@@ -16,7 +17,9 @@ export default function Wrapper({ title, data }: IWrapper) {
 	return (
 		<dl className={skillWrap}>
 			<dt className={listTitleWrap}>
-				<h4 className={listTitle}>{title}</h4>
+				<Text typography='h4' className={listTitle}>
+					{title}
+				</Text>
 			</dt>
 			<dd className={skillListWrap}>
 				<ul className={skillList}>

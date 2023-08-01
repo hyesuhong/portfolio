@@ -5,8 +5,8 @@ import { dataObj } from '../../typeSet';
 
 import Section from '../../components/contents/Section';
 import Title from '../../components/contents/Title';
-import Wrapper from '../../components/skills/Wrapper';
-import { ISkillItem } from '../../components/skills/SkillItem';
+import Wrapper from '../../components/contents/skills/Wrapper';
+import { ISkillItem } from '../../components/contents/skills/SkillItem';
 
 import skillsData from '../../data/skills.json';
 import { useNavDispatch } from '../../contexts/NavContext';
