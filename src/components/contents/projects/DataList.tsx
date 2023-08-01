@@ -1,3 +1,4 @@
+import Text from '../../basic/Text';
 import Slide from './Slide';
 import {
 	projectDesc,
@@ -45,10 +46,12 @@ export default function DataList({ data, kind, current, onClick }: IDataList) {
 			onClick={onClick}
 		>
 			<div className={projectValue['title']} data-kind={kind[0]}>
-				<span className={projectTitle}>{name}</span>
+				<Text typography='span' className={projectTitle}>
+					{name}
+				</Text>
 			</div>
 			<div className={projectValue['overview']}>
-				<span>{overview}</span>
+				<Text typography='span'>{overview}</Text>
 			</div>
 			<div className={projectValue['duration']}>
 				{end ? `${start} ~ ${end}` : start}
@@ -62,9 +65,9 @@ export default function DataList({ data, kind, current, onClick }: IDataList) {
 				{stack && (
 					<ul className={projectDetailList['stack']}>
 						{stack.map((s, i) => (
-							<span className={projectStack} key={i}>
+							<Text typography='span' className={projectStack} key={i}>
 								{s}
-							</span>
+							</Text>
 						))}
 					</ul>
 				)}
