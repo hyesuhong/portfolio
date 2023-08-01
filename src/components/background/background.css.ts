@@ -11,6 +11,7 @@ export const wrapper = style([
 		height: '100%',
 		zIndex: -1,
 		pointerEvents: 'none',
+		overflow: 'hidden',
 	},
 	responsiveStyle({
 		mobile: {
@@ -23,8 +24,9 @@ const circleBase = style([
 	{
 		position: 'absolute',
 		borderRadius: '50%',
-		opacity: 0.8,
-		filter: 'blur(10rem)',
+		opacity: 0.7,
+		filter: 'blur(12rem)',
+		willChange: 'transform',
 	},
 	responsiveStyle({ mobile: { filter: 'blur(6rem)' } }),
 ]);
@@ -33,11 +35,11 @@ export const circle = styleVariants({
 	purple: [
 		circleBase,
 		{
-			top: 'calc(50% - 20vw)',
+			top: 'calc(50% - 15vw)',
 			left: '10%',
-			width: '40vw',
-			height: '40vw',
-			background: `radial-gradient(${themeVars.color.purple.light} 50%, rgba(0,0,0,0) 60%)`,
+			width: '30vw',
+			height: '30vw',
+			background: themeVars.color.purple.light,
 		},
 		responsiveStyle({
 			mobile: {
@@ -55,7 +57,7 @@ export const circle = styleVariants({
 			left: 0,
 			width: '20vw',
 			height: '20vw',
-			background: `radial-gradient(${themeVars.color.blue.sky} 50%, rgba(0,0,0,0) 60%)`,
+			background: themeVars.color.blue.sky,
 		},
 		responsiveStyle({
 			mobile: {

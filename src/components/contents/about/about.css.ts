@@ -160,6 +160,7 @@ export const dropdownInput = style({
 
 	border: 'none',
 	borderBottom: `2px solid ${themeVars.color.purple.light}`,
+	borderRadius: 0,
 	outline: 'none',
 	background: 'transparent',
 	color: themeVars.color.text,
