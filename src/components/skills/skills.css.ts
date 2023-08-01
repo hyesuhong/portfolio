@@ -1,6 +1,5 @@
 import { style } from '@vanilla-extract/css';
 import { themeVars } from '../../styles/theme.css';
-import { svg } from '../icon/icon.css';
 import { responsiveStyle } from '../../utils/responsiveStyle';
 
 export const skillWrap = style([
@@ -81,10 +80,10 @@ export const skillItem = style({
 });
 
 export const skillIcon = style([
-	svg['fixed'],
 	{
 		width: '3rem',
 		height: '3rem',
+		fill: themeVars.color.text,
 		transform: 'translateY(1em)',
 		transition: 'fill 0.3s, transform 0.3s',
 
