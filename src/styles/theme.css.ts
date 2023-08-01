@@ -19,6 +19,9 @@ export const themeVars = createGlobalThemeContract({
 			accent: 'accentColor',
 			light: 'lightColor',
 		},
+		blue: {
+			sky: 'skyBlueColor',
+		},
 	},
 });
 
@@ -30,6 +33,9 @@ createGlobalTheme(':root.light', themeVars, {
 			accent: colorVars.accentPurple,
 			light: colorVars.lightPurple,
 		},
+		blue: {
+			sky: colorVars.skyBlue,
+		},
 	},
 });
 
@@ -40,6 +46,9 @@ createGlobalTheme(':root.dark', themeVars, {
 		purple: {
 			accent: colorVars.accentPurple,
 			light: colorVars.lightPurple,
+		},
+		blue: {
+			sky: colorVars.skyBlue,
 		},
 	},
 });
