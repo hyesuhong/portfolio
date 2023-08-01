@@ -1,4 +1,4 @@
-import { dataObj } from '../../typeSet';
+import { dataObj } from '../../../typeSet';
 import HistoryCard, { HistoryType } from './HistoryCard';
 
 interface IHistory {

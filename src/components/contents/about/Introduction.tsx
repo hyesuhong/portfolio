@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Dropdown from './Dropdown';
 import { introTitle, introTitleWrap, introWrap, para } from './about.css';
+import Text from '../../basic/Text';
 
 type IntroObj = {
 	keyword: string;
@@ -29,15 +30,20 @@ export default function Introduction({ data }: IIntroduction) {
 	return (
 		<div className={introWrap}>
 			<div className={introTitleWrap}>
-				<h3 className={introTitle}>저는</h3>
 				<Dropdown
 					keywords={Object.values(data).map(({ keyword }) => keyword)}
 					currentKey={currentKeyword}
 					setCurrentKey={setCurrentKeyword}
 				/>
-				<h3>고민하는 개발자입니다.</h3>
+				<Text typography='h3' className={introTitle}>
+					고민하는 개발자입니다.
+				</Text>
 			</div>
-			{desc && <p className={para}>{desc}</p>}
+			{desc && (
+				<Text typography='p' className={para}>
+					{desc}
+				</Text>
+			)}
 		</div>
 	);
 }

@@ -3,9 +3,9 @@ import { useIntersection } from '@su-hooks/use-intersection/dist/useIntersection
 import Article from '../../components/contents/Article';
 import Section from '../../components/contents/Section';
 import Title from '../../components/contents/Title';
-import Wrapper from '../../components/about/Wrapper';
-import Introduction from '../../components/about/Introduction';
-import History from '../../components/about/History';
+import Wrapper from '../../components/contents/about/Wrapper';
+import Introduction from '../../components/contents/about/Introduction';
+import History from '../../components/contents/about/History';
 
 import aboutData from '../../data/about.json';
 import { useNavDispatch } from '../../contexts/NavContext';
@@ -27,6 +27,7 @@ export default function About() {
 					dispatch({ type: 'change', index: 0 });
 				} else {
 					if (entry.boundingClientRect.top > 0) {
+						// 위로
 						dispatch({ type: 'change', index: -1 });
 					}
 				}
@@ -41,15 +42,9 @@ export default function About() {
 	}, []);
 
 	return (
-		<Section sectionId={id} sectionRef={ref}>
+		<Section id={id} sectionRef={ref}>
 			<Article position='left'>
-				<Title
-					title={
-						<>
-							Who am <strong>I</strong>
-						</>
-					}
-				/>
+				<Title title='Who am <strong>I</strong>' />
 			</Article>
 			<Article position='right'>
 				<Wrapper>

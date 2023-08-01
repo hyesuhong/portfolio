@@ -42,15 +42,9 @@ export default function Skills() {
 	}, []);
 
 	return (
-		<Section sectionId={id} sectionRef={ref}>
+		<Section id={id} sectionRef={ref}>
 			<Article position='left'>
-				<Title
-					title={
-						<>
-							My <strong>skills</strong> are
-						</>
-					}
-				/>
+				<Title title='My <strong>skills</strong> are' />
 			</Article>
 			<Article position='right'>
 				{keys.map((skillKey, index) => {

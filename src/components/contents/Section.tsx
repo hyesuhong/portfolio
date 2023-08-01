@@ -1,19 +1,17 @@
-import { ReactNode, RefObject } from 'react';
+import { HTMLAttributes, RefObject } from 'react';
 import { section } from './contents.css';
 
-interface ISection {
-	children: ReactNode;
+interface ISection extends HTMLAttributes<Element> {
 	sectionRef?: RefObject<HTMLElement>;
-	sectionId?: string;
 }
 
-export default function Section({ children, sectionRef, sectionId }: ISection) {
+export default function Section({ children, sectionRef, id }: ISection) {
 	const sectionClass = Array.isArray(children)
 		? section['default']
 		: section['onlyTitle'];
 
 	return (
-		<section id={sectionId} className={sectionClass} ref={sectionRef}>
+		<section id={id} className={sectionClass} ref={sectionRef}>
 			{children}
 		</section>
 	);

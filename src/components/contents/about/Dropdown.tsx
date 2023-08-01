@@ -1,5 +1,5 @@
-import { useRef } from 'react';
-import { checkClosedSyllable } from '../../utils/checkSyllable';
+import { useRef, useState } from 'react';
+import { checkClosedSyllable } from '../../../utils/checkSyllable';
 import {
 	dropdownWrap,
 	dropdownInput,
@@ -18,7 +18,7 @@ export default function Dropdown({
 	currentKey,
 	setCurrentKey,
 }: IDropdown) {
-	const wrapRef = useRef<HTMLDivElement>(null);
+	const [post, setPost] = useState<'를' | '을'>('을');
 	const inputRef = useRef<HTMLInputElement>(null);
 
 	const onClick = (ev: React.MouseEvent<HTMLLIElement>) => {
@@ -32,10 +32,8 @@ export default function Dropdown({
 
 		setCurrentKey(word);
 
-		if (wrapRef.current) {
-			const isClosed = checkClosedSyllable(currentKey.slice(-1));
-			wrapRef.current.dataset.post = isClosed ? '를' : '을';
-		}
+		const isClosed = checkClosedSyllable(currentKey.slice(-1));
+		setPost(isClosed ? '를' : '을');
 
 		if (inputRef.current) {
 			inputRef.current.focus();
@@ -44,7 +42,7 @@ export default function Dropdown({
 	};
 
 	return (
-		<div className={dropdownWrap} data-post='을' ref={wrapRef}>
+		<div className={dropdownWrap} data-post={post}>
 			<input
 				type='text'
 				className={dropdownInput}

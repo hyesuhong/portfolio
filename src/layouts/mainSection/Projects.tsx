@@ -49,15 +49,9 @@ export default function Projects() {
 	}, [currentKind]);
 
 	return (
-		<Section sectionId={id} sectionRef={ref}>
+		<Section id={id} sectionRef={ref}>
 			<Article position='left'>
-				<Title
-					title={
-						<>
-							<strong>Projects</strong> what I did
-						</>
-					}
-				/>
+				<Title title='<strong>Projects</strong> what I did' />
 				<ProjectNav
 					keys={Array.from(keys)}
 					currentKey={currentKind}
