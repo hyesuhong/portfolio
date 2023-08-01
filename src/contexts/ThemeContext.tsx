@@ -14,15 +14,12 @@ interface actionType {
 	type: string;
 }
 
-const isLight = window.matchMedia('(prefers-color-scheme: light)');
-const initialTheme = isLight.matches ? 'light' : 'dark';
-
-const ThemeContext = createContext(initialTheme);
+const ThemeContext = createContext('dark');
 
 const ThemeDispatchContext = createContext<null | Dispatch<actionType>>(null);
 
 export function ThemeProvider({ children }: IThemeProvider) {
-	const [themeState, dispatch] = useReducer(themeReducer, initialTheme);
+	const [themeState, dispatch] = useReducer(themeReducer, 'dark');
 	return (
 		<ThemeContext.Provider value={themeState}>
 			<ThemeDispatchContext.Provider value={dispatch}>
