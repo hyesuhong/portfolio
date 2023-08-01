@@ -43,7 +43,7 @@ export default function Slide({ images }: ISlide) {
 				>
 					{images.map((img, index) => {
 						const imgUrl = new URL(
-							`../../assets/projects/${img.url}`,
+							`../../../assets/projects/${img.url}`,
 							import.meta.url
 						).href;
 						return (

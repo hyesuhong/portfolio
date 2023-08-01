@@ -13,9 +13,7 @@ export default function DataTable({ dataList, kind }: IDataTable) {
 	const onClick = (ev: React.MouseEvent<HTMLDivElement>) => {
 		const { currentTarget } = ev;
 		const parent = currentTarget.parentElement!;
-		const siblings = Array.from(parent.children).filter(
-			(el) => !el.classList.contains('thead')
-		);
+		const siblings = Array.from(parent.children);
 
 		const myIndex = siblings.findIndex((el) => el === currentTarget);
 		setPrjIndex(myIndex);

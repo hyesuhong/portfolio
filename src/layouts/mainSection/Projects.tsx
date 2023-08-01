@@ -3,11 +3,11 @@ import { useIntersection } from '@su-hooks/use-intersection/dist/useIntersection
 import Article from '../../components/contents/Article';
 import Section from '../../components/contents/Section';
 import Title from '../../components/contents/Title';
-import ProjectNav from '../../components/projects/ProjectNav';
-import DataTable from '../../components/projects/DataTable';
+import ProjectNav from '../../components/contents/projects/ProjectNav';
+import DataTable from '../../components/contents/projects/DataTable';
 
 import data from '../../data/projects.json';
-import { project } from '../../components/projects/DataList';
+import { project } from '../../components/contents/projects/DataList';
 import { dataObj } from '../../typeSet';
 import { useNavDispatch } from '../../contexts/NavContext';
 
@@ -40,13 +40,10 @@ export default function Projects() {
 
 	useEffect(() => {
 		if (dispatch) dispatch({ type: 'addMenu', menu: { name: 'projects', id } });
+		setPassData([...projectData[currentKind]]);
 
 		return () => observer.disconnect();
 	}, []);
-
-	useEffect(() => {
-		setPassData([...projectData[currentKind]]);
-	}, [currentKind]);
 
 	return (
 		<Section id={id} sectionRef={ref}>
@@ -55,7 +52,9 @@ export default function Projects() {
 				<ProjectNav
 					keys={Array.from(keys)}
 					currentKey={currentKind}
+					totalData={projectData}
 					setCurrentKey={setCurrentKind}
+					setPassData={setPassData}
 				/>
 			</Article>
 			<Article position='right'>
