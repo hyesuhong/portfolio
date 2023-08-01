@@ -1,20 +1,24 @@
-import { useTheme, useThemeDispatch } from '../../contexts/ThemeContext';
-import useToggleTheme from '../../hooks/useToggleTheme';
-import Icon from '../icon/Icon';
-import { footerIconWrap } from './footer.css';
+import { HTMLAttributes } from 'react';
+import Icon from '../basic/Icon';
+import { ReactComponent as IcoDark } from '../../assets/icons/ico-theme-dark.svg';
+import { ReactComponent as IcoLight } from '../../assets/icons/ico-theme-light.svg';
 
-export default function FooterBtn() {
-	const theme = useTheme();
-	const themeDispatch = useThemeDispatch();
-	const changeTheme = () => {
-		if (!themeDispatch) return;
-		useToggleTheme(theme);
-		themeDispatch({ type: 'change' });
-	};
+import { footerIcon, footerIconWrap } from './footer.css';
 
+interface Props extends HTMLAttributes<HTMLButtonElement> {
+	theme: string;
+}
+
+export default function FooterBtn({ theme, onClick }: Props) {
 	return (
-		<button className={footerIconWrap['button']} onClick={changeTheme}>
-			<Icon type={theme} />
+		<button className={footerIconWrap['button']} onClick={onClick}>
+			<Icon size='100%'>
+				{theme === 'dark' ? (
+					<IcoDark className={footerIcon} />
+				) : (
+					<IcoLight className={footerIcon} />
+				)}
+			</Icon>
 		</button>
 	);
 }

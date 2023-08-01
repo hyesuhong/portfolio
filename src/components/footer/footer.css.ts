@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { themeVars } from '../../styles/theme.css';
 
 export const footerWrap = style({
 	position: 'fixed',
@@ -13,6 +14,12 @@ export const footerWrap = style({
 
 	transition: 'all 0.3s',
 	zIndex: 100,
+});
+
+export const footerIcon = style({
+	width: '100%',
+	height: '100%',
+	fill: themeVars.color.text,
 });
 
 export const footerUrlList = style({

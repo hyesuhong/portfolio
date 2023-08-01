@@ -35,7 +35,13 @@ export const headerSlideUp = style([
 export const logoWrap = style({
 	height: '3rem',
 	flex: '0 0 3rem',
-	// cursor: 'pointer',
+	cursor: 'pointer',
+});
+
+export const headerLogo = style({
+	width: '100%',
+	height: '100%',
+	fill: themeVars.color.text,
 });
 
 export const headerNav = style({

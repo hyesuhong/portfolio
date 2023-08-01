@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { title as h2Title } from './contents.css';
+import Text from '../basic/Text';
 
 interface ITitle {
 	title: ReactNode;
@@ -8,7 +9,9 @@ interface ITitle {
 export default function Title({ title }: ITitle) {
 	return (
 		<>
-			<h2 className={h2Title}>{title}</h2>
+			<Text typography='h2' className={h2Title}>
+				{title}
+			</Text>
 		</>
 	);
 }

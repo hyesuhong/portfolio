@@ -1,4 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
+import { themeVars } from '../../styles/theme.css';
 
 const wrapperBase = style({
 	position: 'fixed',
@@ -21,4 +22,10 @@ const wrapperBase = style({
 export const loaderWrap = styleVariants({
 	show: [wrapperBase, { visibility: 'visible', opacity: 1 }],
 	hide: [wrapperBase, { visibility: 'hidden', opacity: 0 }],
+});
+
+export const loaderIcon = style({
+	width: '100%',
+	height: '100%',
+	fill: themeVars.color.purple.light,
 });

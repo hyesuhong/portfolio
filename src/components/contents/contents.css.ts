@@ -8,9 +8,9 @@ const sectionBase = style([
 	{
 		display: 'flex',
 		minHeight: '100vh',
-		borderBottom: `1px solid ${themeVars.color.text}`,
-		':last-child': {
-			borderBottom: 'none',
+		borderTop: `1px solid ${themeVars.color.text}`,
+		':first-child': {
+			borderTop: 'none',
 		},
 	},
 	responsiveStyle({

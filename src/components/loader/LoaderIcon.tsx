@@ -1,13 +1,11 @@
-import { colorVars } from '../../styles/theme.css';
-import Logo from '../icon/Logo';
+import Icon from '../basic/Icon';
+import { ReactComponent as IcoLogoAnimate } from '../../assets/icons/logo-animation.svg';
+import { loaderIcon } from './loader.css';
 
 export default function LoaderIcon() {
 	return (
-		<Logo
-			animated={true}
-			width='10rem'
-			height='10rem'
-			color={colorVars.lightPurple}
-		/>
+		<Icon size='10rem'>
+			<IcoLogoAnimate className={loaderIcon} />
+		</Icon>
 	);
 }
