@@ -4,7 +4,6 @@ import Article from '../../components/contents/Article';
 import Section from '../../components/contents/Section';
 import Title from '../../components/contents/Title';
 import Wrapper from '../../components/contents/about/Wrapper';
-import Introduction from '../../components/contents/about/Introduction';
 import History from '../../components/contents/about/History';
 
 import aboutData from '../../data/about.json';
@@ -48,7 +47,6 @@ export default function About() {
 			</Article>
 			<Article position='right'>
 				<Wrapper>
-					<Introduction data={aboutData.introduce} />
 					<History data={aboutData.history} />
 				</Wrapper>
 			</Article>
