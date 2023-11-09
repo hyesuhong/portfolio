@@ -165,10 +165,10 @@ const projectValueBase = style([
 
 		selectors: {
 			[`${projectList['clicked']} &:nth-child(-n + 3)`]: {
-				color: themeVars.color.background,
+				color: themeVars.color.background.solid,
 			},
 			[`${projectList['clicked']} &:nth-child(-n + 3)::before`]: {
-				background: themeVars.color.background,
+				background: themeVars.color.background.solid,
 				color: themeVars.color.text,
 			},
 		},
@@ -206,7 +206,7 @@ export const projectValue = styleVariants({
 				marginRight: '0.5rem',
 
 				background: themeVars.color.text,
-				color: themeVars.color.background,
+				color: themeVars.color.background.solid,
 
 				fontSize: '1.2rem',
 				textAlign: 'center',

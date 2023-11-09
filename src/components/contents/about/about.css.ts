@@ -183,7 +183,7 @@ export const dropdownList = style({
 	transform: 'translateY(0.5rem) scaleY(0)',
 	transformOrigin: 'top center',
 
-	background: themeVars.color.background,
+	background: themeVars.color.background.solid,
 	border: `1px solid ${themeVars.color.text}`,
 
 	zIndex: 1,

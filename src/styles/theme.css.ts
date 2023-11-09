@@ -2,6 +2,7 @@ import {
 	createGlobalTheme,
 	createGlobalThemeContract,
 } from '@vanilla-extract/css';
+import { hexToCssRgb } from '../utils/color';
 
 export const colorVars = {
 	black: '#1e1e1e',
@@ -13,7 +14,10 @@ export const colorVars = {
 
 export const themeVars = createGlobalThemeContract({
 	color: {
-		background: 'bgColor',
+		background: {
+			solid: 'bgColor_solid',
+			blur: 'bgColor_blur',
+		},
 		text: 'textColor',
 		purple: {
 			accent: 'accentColor',
@@ -27,7 +31,10 @@ export const themeVars = createGlobalThemeContract({
 
 createGlobalTheme(':root.light', themeVars, {
 	color: {
-		background: colorVars.white,
+		background: {
+			solid: colorVars.white,
+			blur: hexToCssRgb(colorVars.white, 0.5),
+		},
 		text: colorVars.black,
 		purple: {
 			accent: colorVars.accentPurple,
@@ -41,7 +48,10 @@ createGlobalTheme(':root.light', themeVars, {
 
 createGlobalTheme(':root.dark', themeVars, {
 	color: {
-		background: colorVars.black,
+		background: {
+			solid: colorVars.black,
+			blur: hexToCssRgb(colorVars.black, 0.5),
+		},
 		text: colorVars.white,
 		purple: {
 			accent: colorVars.accentPurple,

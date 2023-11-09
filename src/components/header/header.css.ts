@@ -12,7 +12,8 @@ export const headerContainer = style({
 	justifyContent: 'space-between',
 	alignItems: 'center',
 
-	background: themeVars.color.background,
+	background: themeVars.color.background.blur,
+	backdropFilter: 'blur(1rem)',
 	borderBottom: `1px solid ${themeVars.color.text}`,
 
 	transition: 'all 0.3s',
