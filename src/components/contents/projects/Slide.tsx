@@ -1,45 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { slideContainer, slideImage } from './projects.css';
 import { projectURL } from './DataList';
-import {
-	slideContainer,
-	slideImage,
-	slideSlide,
-	slideWrapper,
-} from './projects.css';
+import { Autoplay } from 'swiper/modules';
 
 interface ISlide {
 	images: projectURL[];
 }
 
 export default function Slide({ images }: ISlide) {
-	const [index, setIndex] = useState(0);
-	const slideEl = useRef<HTMLDivElement>(null);
-
-	useEffect(() => {
-		if (images.length === 1) return;
-		const timer = setInterval(() => {
-			setIndex((prev) => prev + 1);
-		}, 2000);
-		return () => clearInterval(timer);
-	}, []);
-
-	useEffect(() => {
-		if (!slideEl.current) return;
-
-		const curIndex = index % images.length;
-
-		slideEl.current.style.transform = `translateX(-${
-			(100 / images.length) * curIndex
-		}%)`;
-	}, [index]);
-
 	return (
 		<>
 			<div className={slideContainer}>
-				<div
-					className={slideWrapper}
-					style={{ width: `${100 * images.length}%` }}
-					ref={slideEl}
+				<Swiper
+					speed={500}
+					autoplay={{
+						delay: 2000,
+						pauseOnMouseEnter: true,
+						disableOnInteraction: false,
+					}}
+					loop={true}
+					modules={[Autoplay]}
+					style={{ height: '100%' }}
 				>
 					{images.map((img, index) => {
 						const imgUrl = new URL(
@@ -47,12 +29,12 @@ export default function Slide({ images }: ISlide) {
 							import.meta.url
 						).href;
 						return (
-							<div className={slideSlide} key={index}>
+							<SwiperSlide key={index}>
 								<img src={imgUrl} alt={img.title} className={slideImage} />
-							</div>
+							</SwiperSlide>
 						);
 					})}
-				</div>
+				</Swiper>
 			</div>
 		</>
 	);
