@@ -74,8 +74,15 @@
 				},
 				{
 					"title": "NPM",
-					"url": "https://www.npmjs.com/package/@su-hooks/use-coords"
+					"url": "https://www.npmjs.com/search?q=%40su-hooks"
+				},
+				{
+					"title": "Demo",
+					"url": "https://su-hooks.vercel.app/"
 				}
+			],
+			"images": [
+				{ "title": "데모 홈페이지", "url": "su-hooks/demo-screen.png" }
 			]
 		},
 		{
@@ -107,32 +114,6 @@
 				}
 			],
 			"images": [{ "title": "기본화면", "url": "weather/basic.png" }]
-		},
-		{
-			"start": "2021",
-			"name": "Check Check",
-			"overview": "LocalStorage를 이용한 체크리스트",
-			"stack": [
-				"Typescript",
-				"React.js",
-				"Styled-Components",
-				"Recoil",
-				"React-hook-form"
-			],
-			"description": [
-				"체크리스트를 그룹별로 관리하기 위해 카테고리 설정 추가",
-				"리스트 항목과 카테고리 항목을 모든 컴포넌트에서 접근하기 위해 Recoil 활용"
-			],
-			"relatedURL": [
-				{
-					"title": "Github",
-					"url": "https://github.com/hyesuhong/checklist"
-				},
-				{
-					"title": "Demo Page",
-					"url": "https://hyesuhong.github.io/checklist/"
-				}
-			]
 		}
 	]
 }
