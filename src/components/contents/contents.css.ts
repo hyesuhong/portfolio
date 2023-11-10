@@ -59,10 +59,11 @@ export const article = styleVariants({
 		},
 		responsiveStyle({
 			mobile: {
+				top: '5rem',
 				flexWrap: 'wrap',
 				height: 'auto',
 				borderRight: 'none',
-				padding: '5rem 0 0',
+				padding: '0',
 			},
 		}),
 	],
