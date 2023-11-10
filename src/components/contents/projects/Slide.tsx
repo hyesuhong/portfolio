@@ -19,7 +19,7 @@ export default function Slide({ images }: ISlide) {
 						pauseOnMouseEnter: true,
 						disableOnInteraction: false,
 					}}
-					loop={true}
+					loop={images.length > 1}
 					modules={[Autoplay]}
 					style={{ height: '100%' }}
 				>
