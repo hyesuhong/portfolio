@@ -15,8 +15,8 @@ export default function Background({ isMobile }: IBackground) {
 
 			const centerX = pageX - innerWidth / 2;
 			const centerY = pageY - innerHeight / 2;
-			const percentX = (centerX / innerWidth) * 10;
-			const percentY = (centerY / innerHeight) * 2;
+			const percentX = (centerX / innerWidth) * 20;
+			const percentY = (centerY / innerHeight) * 5;
 
 			setPosition({ x: percentX, y: percentY });
 		}

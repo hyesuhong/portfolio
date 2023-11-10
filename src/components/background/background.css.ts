@@ -13,11 +13,6 @@ export const wrapper = style([
 		pointerEvents: 'none',
 		overflow: 'hidden',
 	},
-	responsiveStyle({
-		mobile: {
-			position: 'absolute',
-		},
-	}),
 ]);
 
 const circleBase = style([
