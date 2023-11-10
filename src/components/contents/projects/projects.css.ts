@@ -50,7 +50,7 @@ const navLabelPeseudoBase = {
 	position: 'absolute',
 	left: 0,
 	color: themeVars.color.text,
-	opacity: 0.2,
+	opacity: 0.5,
 	transition: 'all 0.3s',
 } as CSSProperties;
 
@@ -90,7 +90,7 @@ const projectListBase = style([
 		position: 'relative',
 		display: 'grid',
 		gridTemplate: '4rem max-content / repeat(2, 2fr) 1fr',
-		gridTemplateAreas: `'title overview duration' 'images details empty'`,
+		gridTemplateAreas: `'title overview duration' 'images details details'`,
 		alignItems: 'center',
 
 		maxHeight: '4rem',
