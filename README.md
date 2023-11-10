@@ -30,7 +30,7 @@
 
 | Light | Dark |
 |--|--|
-|<img height="300" alt="스크린샷 2023-11-10 15 29 19" src="https://github.com/hyesuhong/portfolio/assets/70276660/fa4921fa-218a-45a1-afa9-386fb1fe98cf">|<img height="300" alt="스크린샷 2023-11-10 15 28 50" src="https://github.com/hyesuhong/portfolio/assets/70276660/96fd7e28-a5fb-4c49-9fe2-1be6bf3ff5ff">|
+|<img alt="스크린샷 2023-11-10 15 29 19" src="https://github.com/hyesuhong/portfolio/assets/70276660/fa4921fa-218a-45a1-afa9-386fb1fe98cf">|<img alt="스크린샷 2023-11-10 15 28 50" src="https://github.com/hyesuhong/portfolio/assets/70276660/96fd7e28-a5fb-4c49-9fe2-1be6bf3ff5ff">|
 
 
 화면의 왼쪽 하단에 위치한 아이콘을 누를 시 테마가 변경되도록 구현했습니다.
