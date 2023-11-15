@@ -1,6 +1,6 @@
 import { CSSProperties, style, styleVariants } from '@vanilla-extract/css';
 import { themeVars } from './theme.css';
-import IcoLink from '../../../assets/icons/ico-link.svg';
+import IcoLink from '../assets/icons/ico-link.svg';
 import { responsiveStyle } from '../utils/responsiveStyle';
 
 export const navList = style([
