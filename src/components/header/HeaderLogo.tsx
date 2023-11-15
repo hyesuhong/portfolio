@@ -1,16 +1,16 @@
+import { HTMLAttributes } from 'react';
 import Icon from '../basic/Icon';
 import Text from '../basic/Text';
-import { headerLogo, logoWrap } from './header.css';
 import { ReactComponent as IcoLogo } from '../../assets/icons/logo.svg';
-import { HTMLAttributes } from 'react';
+import * as S from '../../styles/header.css';
 
 interface Props extends HTMLAttributes<Element> {}
 
 export default function HeaderLogo({ onClick }: Props) {
 	return (
-		<Text typography='h1' className={logoWrap} onClick={onClick}>
+		<Text typography='h1' className={S.logoWrap} onClick={onClick}>
 			<Icon size='100%'>
-				<IcoLogo className={headerLogo} />
+				<IcoLogo className={S.headerLogo} />
 			</Icon>
 		</Text>
 	);

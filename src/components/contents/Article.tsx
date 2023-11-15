@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { article } from './contents.css';
+import * as S from '../../styles/contents.css';
 
 interface IArticle {
 	position: 'left' | 'right';
@@ -7,5 +7,5 @@ interface IArticle {
 }
 
 export default function Article({ position, children }: IArticle) {
-	return <article className={article[position]}>{children}</article>;
+	return <article className={S.article[position]}>{children}</article>;
 }

@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import { slideContainer, slideImage } from './projects.css';
-import { projectURL } from './DataList';
 import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import { projectURL } from './DataList';
+import * as S from '../../../styles/projects.css';
 
 interface ISlide {
 	images: projectURL[];
@@ -11,7 +11,7 @@ interface ISlide {
 export default function Slide({ images }: ISlide) {
 	return (
 		<>
-			<div className={slideContainer}>
+			<div className={S.slideContainer}>
 				<Swiper
 					speed={500}
 					autoplay={{
@@ -30,7 +30,7 @@ export default function Slide({ images }: ISlide) {
 						).href;
 						return (
 							<SwiperSlide key={index}>
-								<img src={imgUrl} alt={img.title} className={slideImage} />
+								<img src={imgUrl} alt={img.title} className={S.slideImage} />
 							</SwiperSlide>
 						);
 					})}

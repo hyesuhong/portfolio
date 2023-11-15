@@ -1,11 +1,10 @@
 import * as icons from 'simple-icons';
-import type { SimpleIcon } from 'simple-icons';
 import { dataObj } from '../../../typeSet';
-import { skillIcon, skillItem, skillTitle } from './skills.css';
 import Text from '../../basic/Text';
 import Icon from '../../basic/Icon';
+import * as S from '../../../styles/skills.css';
 
-const Icons = icons as dataObj<SimpleIcon>;
+const Icons = icons as dataObj<icons.SimpleIcon>;
 
 export interface ISkillItem {
 	name: string;
@@ -19,12 +18,12 @@ export default function SkillItem({ slug }: ISkillItem) {
 	const hoverColor = { '--hover-color': `#${hex}` } as React.CSSProperties;
 
 	return (
-		<li className={skillItem} style={hoverColor}>
+		<li className={S.skillItem} style={hoverColor}>
 			<Icon
-				className={skillIcon}
+				className={S.skillIcon}
 				dangerouslySetInnerHTML={{ __html: svg }}
 			></Icon>
-			<Text typography='p' className={skillTitle}>
+			<Text typography='p' className={S.skillTitle}>
 				{title}
 			</Text>
 		</li>

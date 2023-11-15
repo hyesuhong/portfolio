@@ -1,5 +1,5 @@
 import { style, styleVariants } from '@vanilla-extract/css';
-import { themeVars } from '../../styles/theme.css';
+import { themeVars } from './theme.css';
 
 const circleBase = style([
 	{

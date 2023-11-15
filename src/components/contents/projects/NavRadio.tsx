@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import { navInput, navLabel } from './projects.css';
+import * as S from '../../../styles/projects.css';
 
 interface INavRadio {
 	word: string;
@@ -16,11 +16,11 @@ export default function NavRadio({ word, checked, onChange }: INavRadio) {
 				name='projectKind'
 				value={word}
 				id={elID}
-				className={navInput}
+				className={S.navInput}
 				defaultChecked={checked}
 				onChange={onChange}
 			/>
-			<label htmlFor={elID} data-text={word} className={navLabel}>
+			<label htmlFor={elID} data-text={word} className={S.navLabel}>
 				{word}
 			</label>
 		</>

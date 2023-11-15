@@ -1,10 +1,10 @@
-import { circle, wrapper } from './background.css';
+import * as S from '../../styles/background.css';
 
 export default function Background() {
 	return (
-		<div className={wrapper}>
-			<span className={circle['blue']}></span>
-			<span className={circle['purple']}></span>
+		<div className={S.wrapper}>
+			<span className={S.circle.blue}></span>
+			<span className={S.circle.purple}></span>
 		</div>
 	);
 }

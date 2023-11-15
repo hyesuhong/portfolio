@@ -1,12 +1,6 @@
 import Text from '../../basic/Text';
 import SkillItem, { ISkillItem } from './SkillItem';
-import {
-	skillList,
-	skillListWrap,
-	listTitle,
-	listTitleWrap,
-	skillWrap,
-} from './skills.css';
+import * as S from '../../../styles/skills.css';
 
 interface IWrapper {
 	title: string;
@@ -15,14 +9,14 @@ interface IWrapper {
 
 export default function Wrapper({ title, data }: IWrapper) {
 	return (
-		<dl className={skillWrap}>
-			<dt className={listTitleWrap}>
-				<Text typography='h4' className={listTitle}>
+		<dl className={S.skillWrap}>
+			<dt className={S.listTitleWrap}>
+				<Text typography='h4' className={S.listTitle}>
 					{title}
 				</Text>
 			</dt>
-			<dd className={skillListWrap}>
-				<ul className={skillList}>
+			<dd className={S.skillListWrap}>
+				<ul className={S.skillList}>
 					{data.map((skill, index) => (
 						<SkillItem key={index} {...skill} />
 					))}

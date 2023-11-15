@@ -1,5 +1,5 @@
 import { NavObj } from '../../contexts/NavContext';
-import { headerNav, headerNavItem, headerNavItemCurrent } from './header.css';
+import * as S from '../../styles/header.css';
 
 interface INav {
 	list: NavObj[];
@@ -21,7 +21,7 @@ export default function Nav({ list, targetIndex }: INav) {
 
 	return (
 		<nav>
-			<ul className={headerNav}>
+			<ul className={S.headerNav}>
 				{list.map(({ name, id }, index) => {
 					const text = name.slice(0, 1).toUpperCase() + name.slice(1);
 					return (
@@ -30,7 +30,7 @@ export default function Nav({ list, targetIndex }: INav) {
 							data-text={text}
 							data-id={id}
 							className={
-								index === targetIndex ? headerNavItemCurrent : headerNavItem
+								index === targetIndex ? S.headerNavItemCurrent : S.headerNavItem
 							}
 							onClick={onClick}
 						>

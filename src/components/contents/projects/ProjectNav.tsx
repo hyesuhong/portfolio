@@ -1,7 +1,7 @@
 import { dataObj } from '../../../typeSet';
 import { project } from './DataList';
 import NavRadio from './NavRadio';
-import { navItem, navList } from './projects.css';
+import * as S from '../../../styles/projects.css';
 
 interface IProjectNav {
 	keys: string[];
@@ -27,11 +27,11 @@ export default function ProjectNav({
 	};
 
 	return (
-		<ul className={navList}>
+		<ul className={S.navList}>
 			{keys.map((key, index) => {
 				const isChecked = key === currentKey;
 				return (
-					<li className={navItem} key={index}>
+					<li className={S.navItem} key={index}>
 						<NavRadio word={key} checked={isChecked} onChange={onChange} />
 					</li>
 				);

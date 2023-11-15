@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import * as S from './cursor.css';
+import * as S from '../../styles/cursor.css';
 
 const Cursor = () => {
 	const [position, setPosition] = useState({ x: 0, y: 0 });

@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
-import { themeVars } from '../../../styles/theme.css';
-import { responsiveStyle } from '../../../utils/responsiveStyle';
+import { themeVars } from './theme.css';
+import { responsiveStyle } from '../utils/responsiveStyle';
 
 export const skillWrap = style([
 	{

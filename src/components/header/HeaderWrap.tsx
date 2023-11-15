@@ -1,10 +1,10 @@
 import { ReactNode } from 'react';
-import { headerContainer } from './header.css';
+import * as S from '../../styles/header.css';
 
 interface IHeaderWrap {
 	children: ReactNode;
 }
 
 export default function HeaderWrap({ children }: IHeaderWrap) {
-	return <header className={headerContainer}>{children}</header>;
+	return <header className={S.headerContainer}>{children}</header>;
 }

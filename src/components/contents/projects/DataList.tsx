@@ -1,16 +1,7 @@
 import Text from '../../basic/Text';
 import Slide from './Slide';
-import {
-	projectDesc,
-	projectDetailList,
-	projectList,
-	projectStack,
-	projectTitle,
-	projectUrl,
-	projectValue,
-} from './projects.css';
+import * as S from '../../../styles/projects.css';
 
-// export type projectKind = 'all' | 'work' | 'personal';
 export type projectKind = string;
 
 export type project = {
@@ -42,40 +33,40 @@ export default function DataList({ data, kind, current, onClick }: IDataList) {
 
 	return (
 		<div
-			className={current ? projectList['clicked'] : projectList['default']}
+			className={current ? S.projectList.clicked : S.projectList.default}
 			onClick={onClick}
 		>
-			<div className={projectValue['title']} data-kind={kind[0]}>
-				<Text typography='span' className={projectTitle}>
+			<div className={S.projectValue.title} data-kind={kind[0]}>
+				<Text typography='span' className={S.projectTitle}>
 					{name}
 				</Text>
 			</div>
-			<div className={projectValue['overview']}>
+			<div className={S.projectValue.overview}>
 				<Text typography='span'>{overview}</Text>
 			</div>
-			<div className={projectValue['duration']}>
+			<div className={S.projectValue.duration}>
 				{end ? `${start} ~ ${end}` : start}
 			</div>
 			{images && current && (
-				<div className={projectValue['images']}>
+				<div className={S.projectValue.images}>
 					<Slide images={images} />
 				</div>
 			)}
-			<div className={projectValue['details']}>
+			<div className={S.projectValue.details}>
 				{stack && (
-					<ul className={projectDetailList['stack']}>
+					<ul className={S.projectDetailList.stack}>
 						{stack.map((s, i) => (
-							<Text typography='span' className={projectStack} key={i}>
+							<Text typography='span' className={S.projectStack} key={i}>
 								{s}
 							</Text>
 						))}
 					</ul>
 				)}
 
-				<ul className={projectDetailList['desc']}>
+				<ul className={S.projectDetailList.desc}>
 					{description.map((desc, index) =>
 						desc !== '' ? (
-							<li key={index} className={projectDesc}>
+							<li key={index} className={S.projectDesc}>
 								{desc.toString()}
 							</li>
 						) : null
@@ -83,14 +74,14 @@ export default function DataList({ data, kind, current, onClick }: IDataList) {
 				</ul>
 
 				{relatedURL && (
-					<ul className={projectDetailList['url']}>
+					<ul className={S.projectDetailList.url}>
 						{relatedURL.map((url, index) => (
 							<li key={index}>
 								<a
 									href={url.url}
 									target='_blank'
 									rel='noreferrer'
-									className={projectUrl}
+									className={S.projectUrl}
 								>
 									{url.title}
 								</a>

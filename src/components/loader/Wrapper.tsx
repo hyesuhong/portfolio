@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { loaderWrap } from './loader.css';
+import * as S from '../../styles/loader.css';
 
 interface IWrapper {
 	visible: boolean;
@@ -8,6 +8,6 @@ interface IWrapper {
 
 export default function Wrapper({ visible, children }: IWrapper) {
 	return (
-		<div className={loaderWrap[visible ? 'show' : 'hide']}>{children}</div>
+		<div className={S.loaderWrap[visible ? 'show' : 'hide']}>{children}</div>
 	);
 }

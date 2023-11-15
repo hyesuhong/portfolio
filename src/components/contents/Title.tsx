@@ -1,5 +1,5 @@
-import { title as h2Title } from './contents.css';
 import Text from '../basic/Text';
+import * as S from '../../styles/contents.css';
 
 interface ITitle {
 	title: string;
@@ -10,7 +10,7 @@ export default function Title({ title }: ITitle) {
 		<>
 			<Text
 				typography='h2'
-				className={h2Title}
+				className={S.title}
 				dangerouslySetInnerHTML={{ __html: title }}
 			/>
 		</>

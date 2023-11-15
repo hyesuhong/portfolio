@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import DataList, { project, projectKind } from './DataList';
-import { projectTable } from './projects.css';
+import * as S from '../../../styles/projects.css';
 
 interface IDataTable {
 	dataList: project[];
@@ -24,7 +24,7 @@ export default function DataTable({ dataList, kind }: IDataTable) {
 	}, [dataList]);
 
 	return (
-		<div className={projectTable}>
+		<div className={S.projectTable}>
 			{dataList.map((data, index) => (
 				<DataList
 					data={data}

@@ -1,11 +1,6 @@
 import { useRef, useState } from 'react';
 import { checkClosedSyllable } from '../../../utils/checkSyllable';
-import {
-	dropdownWrap,
-	dropdownInput,
-	dropdownList,
-	dropdownItem,
-} from './about.css';
+import * as S from '../../../styles/about.css';
 
 interface IDropdown {
 	keywords: string[];
@@ -42,21 +37,21 @@ export default function Dropdown({
 	};
 
 	return (
-		<div className={dropdownWrap} data-post={post}>
+		<div className={S.dropdownWrap} data-post={post}>
 			<input
 				type='text'
-				className={dropdownInput}
+				className={S.dropdownInput}
 				readOnly
 				value={currentKey}
 				ref={inputRef}
 			/>
-			<ul className={dropdownList} tabIndex={-1}>
+			<ul className={S.dropdownList} tabIndex={-1}>
 				{keywords.map((keyword, index) => {
 					return (
 						<li
 							key={index}
 							data-value={keyword}
-							className={dropdownItem}
+							className={S.dropdownItem}
 							onClick={onClick}
 						>
 							{keyword}
