@@ -6,6 +6,7 @@ import Footer from './layouts/Footer.tsx';
 import Main from './layouts/Main.tsx';
 import { useEffect, useState } from 'react';
 import Background from './components/background/Background.tsx';
+import Cursor from './components/cursor/Cursor.tsx';
 
 function App() {
 	const [isMobile, setIsMobile] = useState(false);
@@ -23,7 +24,7 @@ function App() {
 	return (
 		<>
 			<ThemeProvider>
-				<Background isMobile={isMobile} />
+				{isMobile ? <Background /> : <Cursor />}
 				<NavProvider>
 					<Header />
 					<Main />

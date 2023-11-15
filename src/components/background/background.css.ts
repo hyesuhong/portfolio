@@ -13,6 +13,12 @@ export const wrapper = style([
 		pointerEvents: 'none',
 		overflow: 'hidden',
 	},
+	responsiveStyle({
+		mobile: {
+			top: 'auto',
+			bottom: 0,
+		},
+	}),
 ]);
 
 const circleBase = style([
@@ -39,9 +45,9 @@ export const circle = styleVariants({
 		responsiveStyle({
 			mobile: {
 				top: 'auto',
+				bottom: '40vw',
 				width: '60vw',
 				height: '60vw',
-				bottom: '40vw',
 			},
 		}),
 	],
