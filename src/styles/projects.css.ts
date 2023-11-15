@@ -121,7 +121,7 @@ const projectListBase = style([
 			left: 0,
 			width: '100%',
 			height: '4rem',
-			cursor: 'pointer',
+			// cursor: 'pointer',
 		},
 
 		selectors: {
@@ -144,10 +144,16 @@ const projectListBase = style([
 ]);
 
 export const projectList = styleVariants({
-	default: [projectListBase],
+	default: [
+		projectListBase,
+		{
+			cursor: 'pointer',
+		},
+	],
 	clicked: [
 		projectListBase,
 		{
+			cursor: 'default',
 			maxHeight: '100vh',
 			selectors: {
 				['&::before']: {
